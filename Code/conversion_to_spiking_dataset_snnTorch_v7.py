@@ -11,6 +11,16 @@ from PIL import Image
 from codecarbon import EmissionsTracker
 import matplotlib.pyplot as plt
 import random
+from comet_ml import Experiment
+from comet_ml.integration.pytorch import log_model
+
+
+experiment = Experiment(
+  api_key="tuUec82jIwUFw6SpIaMEIeCPb",
+  project_name="ssn-conversion",
+  workspace="rcabreraur-uoc-edu"
+)
+
 
 # Carpeta que contiene las imágenes
 image_folder = 'E:/MASTER UOC/AULAS_4TO_SEMESTRE/TFM/AplicationSNN/datasetConvertion_CNN_to_SNN/IMG'
