@@ -28,8 +28,7 @@ logging.basicConfig(level=logging.INFO,
 tracker = EmissionsTracker()
 
 # Ruta al directorio con las imágenes aumentadas
-#data_dir = "E:/MASTER UOC/AULAS_4TO_SEMESTRE/TFM/AplicationSNN/datasetConvertion_CNN/IMG_AUGMENTED"
-data_dir = "E:/MASTER UOC/AULAS_4TO_SEMESTRE/TFM/AplicationSNN/datasetConvertion_CNN/IMG_AUGMENTED_TEST"
+data_dir = "E:/MASTER UOC/AULAS_4TO_SEMESTRE/TFM/AplicationSNN/datasetConvertion_CNN/IMG_AUGMENTED"
 
 # Transformaciones de imagen
 transform = transforms.Compose([
@@ -102,7 +101,7 @@ criterion = nn.MSELoss()
 optimizer = optim.AdamW(model_cnn.parameters(), lr=0.0001, weight_decay=1e-4)
 scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, 'min', patience=5, factor=0.5)
 
-num_epochs = 2
+num_epochs = 10
 
 def train_epoch(model, train_loader, criterion, optimizer):
     model.train()

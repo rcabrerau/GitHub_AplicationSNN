@@ -143,7 +143,7 @@ mse_val = mean_squared_error(y_val, y_pred_val)  # Usar etiquetas codificadas
 mae_val = mean_absolute_error(y_val, y_pred_val)  # Usar etiquetas codificadas
 r2_val = r2_score(y_val, y_pred_val)  # Usar etiquetas codificadas
 
-logging.info("Validation Metrics (CSNN):")
+logging.info("Métricas en el conjunto de validación (CSNN):")
 logging.info(f"MSE: {mse_val}")
 logging.info(f"MAE: {mae_val}")
 logging.info(f"R^2: {r2_val}")
