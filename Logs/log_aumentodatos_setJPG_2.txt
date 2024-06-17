@@ -1,0 +1,4 @@
+2024-06-16 04:01:44,135 - INFO - Carpeta 'Center': 64730 imágenes guardadas.
+2024-06-16 04:01:47,717 - INFO - Carpeta 'Right': 64730 imágenes guardadas.
+2024-06-16 04:01:51,020 - INFO - Carpeta 'Left': 64730 imágenes guardadas.
+2024-06-16 04:01:51,021 - INFO - Conjunto de datos aumentado creado y guardado correctamente.

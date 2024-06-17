@@ -1,7 +1,7 @@
 import h5py
 
 # Abre el archivo HDF5 en modo lectura
-with h5py.File("E:\MASTER UOC\AULAS_4TO_SEMESTRE\TFM\AplicationSNN\spiking_data_04062024_2344.h5", "r") as f:                          
+with h5py.File("E:\MASTER UOC\AULAS_4TO_SEMESTRE\TFM\AplicationSNN\datasetConvertion_CNN_to_SNN\SPIKING_labels\spiking_data_labels_16062024_0029.h5", "r") as f:                          
     # Itera sobre los grupos del archivo
     total_datos = 0
     for group_name in f:

@@ -1,0 +1,88 @@
+2024-06-16 00:23:49,411 - INFO - Total images found: 38838
+2024-06-16 00:24:41,681 - INFO - Total images found: 38838
+2024-06-16 00:24:41,689 - INFO - Total images found: 38838
+2024-06-16 00:24:41,702 - INFO - Total images found: 38838
+2024-06-16 00:24:41,705 - INFO - Total images found: 38838
+2024-06-16 00:24:41,706 - INFO - Total images found: 38838
+2024-06-16 00:24:41,712 - INFO - Total images found: 38838
+2024-06-16 00:24:41,713 - INFO - Total images found: 38838
+2024-06-16 00:24:41,719 - INFO - Total images found: 38838
+2024-06-16 00:25:15,424 - INFO - Processed batch of size: 1000
+2024-06-16 00:25:15,613 - INFO - Processed batch of size: 1000
+2024-06-16 00:25:15,664 - INFO - Processed batch of size: 1000
+2024-06-16 00:25:15,757 - INFO - Processed batch of size: 1000
+2024-06-16 00:25:15,816 - INFO - Processed batch of size: 1000
+2024-06-16 00:25:15,880 - INFO - Processed batch of size: 1000
+2024-06-16 00:25:16,143 - INFO - Processed batch of size: 1000
+2024-06-16 00:25:16,604 - INFO - Processed batch of size: 1000
+2024-06-16 00:25:18,939 - INFO - Saved batch 1 to H5 file
+2024-06-16 00:25:19,944 - INFO - Saved batch 2 to H5 file
+2024-06-16 00:25:21,018 - INFO - Saved batch 3 to H5 file
+2024-06-16 00:25:21,974 - INFO - Saved batch 4 to H5 file
+2024-06-16 00:25:26,042 - INFO - Saved batch 5 to H5 file
+2024-06-16 00:25:32,770 - INFO - Saved batch 6 to H5 file
+2024-06-16 00:25:37,043 - INFO - Saved batch 7 to H5 file
+2024-06-16 00:25:41,080 - INFO - Saved batch 8 to H5 file
+2024-06-16 00:26:07,441 - INFO - Processed batch of size: 1000
+2024-06-16 00:26:07,928 - INFO - Processed batch of size: 1000
+2024-06-16 00:26:07,929 - INFO - Processed batch of size: 1000
+2024-06-16 00:26:08,043 - INFO - Processed batch of size: 1000
+2024-06-16 00:26:08,168 - INFO - Processed batch of size: 1000
+2024-06-16 00:26:08,390 - INFO - Processed batch of size: 1000
+2024-06-16 00:26:08,630 - INFO - Processed batch of size: 1000
+2024-06-16 00:26:08,773 - INFO - Processed batch of size: 1000
+2024-06-16 00:26:11,229 - INFO - Saved batch 9 to H5 file
+2024-06-16 00:26:12,276 - INFO - Saved batch 10 to H5 file
+2024-06-16 00:26:13,810 - INFO - Saved batch 11 to H5 file
+2024-06-16 00:26:18,340 - INFO - Saved batch 12 to H5 file
+2024-06-16 00:26:21,075 - INFO - Saved batch 13 to H5 file
+2024-06-16 00:26:23,906 - INFO - Saved batch 14 to H5 file
+2024-06-16 00:26:26,674 - INFO - Saved batch 15 to H5 file
+2024-06-16 00:26:29,209 - INFO - Saved batch 16 to H5 file
+2024-06-16 00:26:53,207 - INFO - Processed batch of size: 1000
+2024-06-16 00:26:54,875 - INFO - Processed batch of size: 1000
+2024-06-16 00:26:55,099 - INFO - Saved batch 17 to H5 file
+2024-06-16 00:26:55,343 - INFO - Processed batch of size: 1000
+2024-06-16 00:26:55,599 - INFO - Processed batch of size: 1000
+2024-06-16 00:26:55,787 - INFO - Processed batch of size: 1000
+2024-06-16 00:26:56,274 - INFO - Processed batch of size: 1000
+2024-06-16 00:26:56,497 - INFO - Processed batch of size: 1000
+2024-06-16 00:26:56,828 - INFO - Saved batch 18 to H5 file
+2024-06-16 00:26:57,094 - INFO - Processed batch of size: 1000
+2024-06-16 00:26:58,566 - INFO - Saved batch 19 to H5 file
+2024-06-16 00:27:04,822 - INFO - Saved batch 20 to H5 file
+2024-06-16 00:27:08,189 - INFO - Saved batch 21 to H5 file
+2024-06-16 00:27:11,981 - INFO - Saved batch 22 to H5 file
+2024-06-16 00:27:15,895 - INFO - Saved batch 23 to H5 file
+2024-06-16 00:27:19,949 - INFO - Saved batch 24 to H5 file
+2024-06-16 00:27:44,076 - INFO - Processed batch of size: 1000
+2024-06-16 00:27:44,553 - INFO - Processed batch of size: 1000
+2024-06-16 00:27:47,235 - INFO - Processed batch of size: 1000
+2024-06-16 00:27:47,316 - INFO - Saved batch 25 to H5 file
+2024-06-16 00:27:47,458 - INFO - Processed batch of size: 1000
+2024-06-16 00:27:47,880 - INFO - Processed batch of size: 1000
+2024-06-16 00:27:48,330 - INFO - Processed batch of size: 1000
+2024-06-16 00:27:48,371 - INFO - Processed batch of size: 1000
+2024-06-16 00:27:48,772 - INFO - Processed batch of size: 1000
+2024-06-16 00:27:51,667 - INFO - Saved batch 26 to H5 file
+2024-06-16 00:27:55,539 - INFO - Saved batch 27 to H5 file
+2024-06-16 00:27:59,395 - INFO - Saved batch 28 to H5 file
+2024-06-16 00:28:03,000 - INFO - Saved batch 29 to H5 file
+2024-06-16 00:28:08,327 - INFO - Saved batch 30 to H5 file
+2024-06-16 00:28:12,664 - INFO - Saved batch 31 to H5 file
+2024-06-16 00:28:16,747 - INFO - Saved batch 32 to H5 file
+2024-06-16 00:28:36,425 - INFO - Processed batch of size: 838
+2024-06-16 00:28:39,710 - INFO - Processed batch of size: 1000
+2024-06-16 00:28:39,923 - INFO - Processed batch of size: 1000
+2024-06-16 00:28:39,969 - INFO - Processed batch of size: 1000
+2024-06-16 00:28:40,029 - INFO - Processed batch of size: 1000
+2024-06-16 00:28:40,100 - INFO - Processed batch of size: 1000
+2024-06-16 00:28:40,140 - INFO - Processed batch of size: 1000
+2024-06-16 00:28:43,657 - INFO - Saved batch 33 to H5 file
+2024-06-16 00:28:45,793 - INFO - Saved batch 34 to H5 file
+2024-06-16 00:28:48,235 - INFO - Saved batch 35 to H5 file
+2024-06-16 00:28:52,273 - INFO - Saved batch 36 to H5 file
+2024-06-16 00:28:54,802 - INFO - Saved batch 37 to H5 file
+2024-06-16 00:29:01,803 - INFO - Saved batch 38 to H5 file
+2024-06-16 00:29:04,164 - INFO - Saved batch 39 to H5 file
+2024-06-16 00:29:06,257 - INFO - Total batches processed: 38838

@@ -11,40 +11,38 @@ from PIL import Image
 from codecarbon import EmissionsTracker
 import matplotlib.pyplot as plt
 import random
-from comet_ml import Experiment
-from comet_ml.integration.pytorch import log_model
+import logging
+import sys
 
+logging.basicConfig(level=logging.INFO,
+                    format='%(asctime)s - %(levelname)s - %(message)s',
+                    handlers=[
+                        logging.FileHandler("log_convert_spiking.txt"),
+                        logging.StreamHandler(sys.stdout)
+                    ])
 
-experiment = Experiment(
-  api_key="tuUec82jIwUFw6SpIaMEIeCPb",
-  project_name="ssn-conversion",
-  workspace="rcabreraur-uoc-edu"
-)
+# Carpetas para cada categoría
+image_folders = {
+    'center': 'E:/MASTER UOC/AULAS_4TO_SEMESTRE/TFM/AplicationSNN/datasetConvertion_CNN_to_SNN/IMG/center',
+    'left': 'E:/MASTER UOC/AULAS_4TO_SEMESTRE/TFM/AplicationSNN/datasetConvertion_CNN_to_SNN/IMG/left',
+    'right': 'E:/MASTER UOC/AULAS_4TO_SEMESTRE/TFM/AplicationSNN/datasetConvertion_CNN_to_SNN/IMG/right'
+}
 
-
-# Carpeta que contiene las imágenes
-image_folder = 'E:/MASTER UOC/AULAS_4TO_SEMESTRE/TFM/AplicationSNN/datasetConvertion_CNN_to_SNN/IMG'
-
-# Parámetros para la conversión a eventos de espiking
 time_window = 100  # Ventana de tiempo en milisegundos
 threshold = 0.001  # Umbral para la generación de eventos de espiking 
 
-# Inicializar el tracker de emisiones
 tracker = EmissionsTracker() 
 
-# Clase Dataset para cargar y preprocesar las imágenes, con aumento de datos
 class ImageDataset(Dataset):
     def __init__(self, image_files, transform=None):
-        self.image_files = image_files                # image_files (list): Lista de rutas de archivos de imágenes.
-        self.transform = transform                    # Transformación a aplicar a las imágenes. Por defecto, None.
-
-    def __len__(self):                                # Retorna el número total de imágenes en el dataset.
-        return len(self.image_files)                  # Número total de imágenes.
-
-    def __getitem__(self, idx):                       # idx (int): Índice de la imagen.
-        image_path = self.image_files[idx]
+        self.image_files = image_files                
+        self.transform = transform                   
+    def __len__(self):                               
+        return len(self.image_files)                 
+    def __getitem__(self, idx):                       
+        image_path, label = self.image_files[idx]
         image = io.imread(image_path)
-        image = Image.fromarray(image)                # Convertir a formato PIL
+        image = Image.fromarray(image)               
         transform_info = []
         if self.transform:
             for t in self.transform.transforms:
@@ -61,27 +59,28 @@ class ImageDataset(Dataset):
                 elif isinstance(t, transforms.Resize):
                     transform_info.append('Redimensionado a 64x64')
                 image = t(image)
-        return image, transform_info                  # Retorna una imagen del dataset en la posición especificada por el índice.
+        return image, label, transform_info                  
 
-# Transformación para el preprocesamiento de imágenes
 preprocess_transform = transforms.Compose([
     # Aumento de imagenes
-    RandomRotation(degrees=30),                 # Rotación aleatoria en un rango de -30 a 30 grados
-    RandomHorizontalFlip(p=0.5),                # Volteo horizontal aleatorio con una probabilidad de 0.5
-    ColorJitter(brightness=0.2, contrast=0.2),  # Cambio aleatorio en brillo y contraste
+    RandomRotation(degrees=30),                 
+    RandomHorizontalFlip(p=0.5),                
+    ColorJitter(brightness=0.2, contrast=0.2),  
     # Transformación
-    transforms.Resize((64, 64)),                # Ajustar al tamaño deseado
-    transforms.ToTensor(),                      # Convertir a tensor
+    transforms.Resize((64, 64)),                
+    transforms.ToTensor(),                      
 ])
 
-# Obtener la lista de archivos de imágenes
-image_files = [os.path.join(image_folder, f) for f in os.listdir(image_folder) if os.path.isfile(os.path.join(image_folder, f))]
-print(f"Total images found: {len(image_files)}")
+image_files = []
+for label, folder in image_folders.items():
+    for f in os.listdir(folder):
+        if os.path.isfile(os.path.join(folder, f)):
+            image_files.append((os.path.join(folder, f), label))
+logging.info(f"Total images found: {len(image_files)}")
 
-# Función para mostrar imágenes originales y transformadas
 def show_transformed_images(image_batch):
     fig, axes = plt.subplots(2, len(image_batch), figsize=(15, 5))
-    for idx, image_path in enumerate(image_batch):
+    for idx, (image_path, label) in enumerate(image_batch):
         original_image = Image.open(image_path)
         image = original_image.copy()
         transform_info = []
@@ -105,61 +104,53 @@ def show_transformed_images(image_batch):
         transformed_image_pil = transforms.ToPILImage()(transforms.ToTensor()(image))
         
         axes[0, idx].imshow(original_image)
-        axes[0, idx].set_title("Original")
+        axes[0, idx].set_title(f"Original ({label})")
         axes[0, idx].axis('off')
         
         axes[1, idx].imshow(transformed_image_pil)
-        axes[1, idx].set_title("Transformada")#\n" + "\n".join(transform_info))
+        axes[1, idx].set_title("Transformada")
         axes[1, idx].axis('off')
         
-        
-        # Añadir la información de las transformaciones debajo de la imagen transformada
         axes[1, idx].text(0.5, -0.1, "\n".join(transform_info), 
                           ha='center', va='top', transform=axes[1, idx].transAxes, fontsize=9)
 
     plt.tight_layout()
     plt.show()
 
-# Dividir la lista de archivos en lotes más pequeños
 batch_size = 1000
 image_batches = [image_files[i:i+batch_size] for i in range(0, len(image_files), batch_size)]
 
-# Función para procesar un lote de imágenes
-def process_image_batch(image_batch):           # image_batch (list): Lote de rutas de archivos de imágenes.
+def process_image_batch(image_batch):           
     import snntorch
     # Preprocesar el lote de imágenes
     image_dataset = ImageDataset(image_batch, transform=preprocess_transform)
     spiking_data_batch = []
-    for image, transform_info in image_dataset:
+    labels_batch = []
+    for image, label, transform_info in image_dataset:
         # Convertir el lote de imágenes a eventos de espiking
         spiking_data = convert_to_spikes(image, time_window, threshold)
         spiking_data_batch.append(spiking_data)
-    print(f"Processed batch of size: {len(image_batch)}")  # Añadir registro
-    return spiking_data_batch                   # Lista de datos de espiking procesados para cada imagen en el lote.
+        labels_batch.append(label)
+    logging.info(f"Processed batch of size: {len(image_batch)}")  
+    return spiking_data_batch, labels_batch                   
 
-# Función para convertir imágenes a eventos de espiking con codificación de latencia
-# image (torch.Tensor): Imagen en formato tensor.
-# time_window (int): Ventana de tiempo en milisegundos.
-# threshold (float): Umbral para la generación de eventos de espiking.
 def convert_to_spikes(image, time_window, threshold):       
     # Realizar la conversión utilizando snntorch    
     spiking_data = spikegen.latency(image, num_steps=5, normalize=True, linear=True)    
-    return spiking_data                         # Datos de espiking generados a partir de la imagen.
+    return spiking_data                         
 
 if __name__ == '__main__':
-    # Mostrar un lote pequeño de imágenes transformadas
     show_transformed_images(image_files[:5])
     
     # Procesar los lotes de imágenes utilizando multiprocessing
     num_processes = multiprocessing.cpu_count()
     with multiprocessing.Pool(processes=num_processes) as pool:
-        # Utilizar tqdm para seguir el progreso del procesamiento de lotes
         with tracker:
-            spiking_data_list = []
             with h5py.File("spiking_data.h5", "w") as f:
-                for i, spiking_data_batch in enumerate(tqdm(pool.imap(process_image_batch, image_batches), total=len(image_batches))):
-                    for j, spiking_data in enumerate(spiking_data_batch):
+                for i, (spiking_data_batch, labels_batch) in enumerate(tqdm(pool.imap(process_image_batch, image_batches), total=len(image_batches))):
+                    for j, (spiking_data, label) in enumerate(zip(spiking_data_batch, labels_batch)):
                         group = f.create_group(f"image_{i * batch_size + j}")
                         group.create_dataset("spiking_data", data=spiking_data)
-                    print(f"Saved batch {i+1} to H5 file")  # Añadir registro
-    print(f"Total batches processed: {len(spiking_data_list)}")
+                        group.attrs['label'] = label  # Guardar la etiqueta como atributo
+                    logging.info(f"Saved batch {i+1} to H5 file")
+    logging.info(f"Total batches processed: {len(image_files)}")
