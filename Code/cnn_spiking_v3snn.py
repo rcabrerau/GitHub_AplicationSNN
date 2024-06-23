@@ -65,12 +65,8 @@ class SpikingNet(nn.Module):
         print("Despues de flatten:", x.shape)
         x = self.fc1(x)
         print("Despues de fc1:", x.shape)
-        #x = self.leaky3(x)
         x, _ = self.leaky3(x)
         print("Despues de leaky3:", x.shape)
-        #x = x.view(-1, 10)  # Asegura que se mantenga el tamaño del lote correcto
-        #x = x.mean(dim=0)  # Promedio temporal
-        print("Despues de reshape:", x.shape)
         x = self.fc2(x)
         print("Despues de fc2:", x.shape)
         return x
