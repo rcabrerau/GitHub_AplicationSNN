@@ -26,11 +26,20 @@ class CustomDataset(Dataset):
 
         self.spiking_data_array = np.array(self.spiking_data_list, dtype=np.float32)
         self.labels = np.array(self.labels)
-
+                
+        # Comprobar que el número de elementos en spiking_data_list es igual al número de etiquetas
+        assert len(self.spiking_data_list) == len(self.labels), (
+            f"Mismatch between spiking data ({len(self.spiking_data_list)}) and labels ({len(self.labels)})"
+        )
+        
     def __len__(self):
-        return len(self.labels)
+        #return len(self.labels)
+        length = len(self.labels)
+        print(f"__len__ called, returning: {length}")
+        return length
 
     def __getitem__(self, idx):
+        print(f"__getitem__ called with index: {idx}")
         return self.spiking_data_array[idx], self.labels[idx]
 
 # Definir la arquitectura del modelo
@@ -107,12 +116,12 @@ for epoch in range(num_epochs):
     running_loss = 0.0
     for inputs, labels in train_loader:
         optimizer.zero_grad()
-        # Reshape de los datos para que coincidan con la forma esperada por el modelo
+        print("Train-Dimensiones originales de inputs:", inputs.shape)
         inputs = inputs.view(-1, 3, 64, 64)
+        print("Train-Dimensiones después de reshape:", inputs.shape)
         outputs = model(inputs)
-        #outputs = outputs.unsqueeze(0)  # Agrega una dimensión adicional al principio
-        print("Salidas del modelo:", outputs.shape)
-        print("Etiquetas:", labels.shape)
+        print("Train-Salidas del modelo:", outputs.shape)
+        print("Train-Etiquetas:", labels.shape)
         loss = criterion(outputs, labels)
         loss.backward()
         optimizer.step()
@@ -124,9 +133,12 @@ model.eval()
 y_true_val = []
 y_pred_val = []
 for inputs, labels in val_loader:
-    # Reshape de los datos para que coincidan con la forma esperada por el modelo
+    print("Eval-Dimensiones originales de inputs:", inputs.shape)
     inputs = inputs.view(-1, 3, 64, 64)
+    print("Eval-Dimensiones después de reshape:", inputs.shape)
     outputs = model(inputs)
+    print("Eval-Salidas del modelo:", outputs.shape)
+    print("Eval-Etiquetas:", labels.shape)
     y_true_val.extend(labels.cpu().numpy())
     y_pred_val.extend(outputs.argmax(dim=1).cpu().numpy())
 
