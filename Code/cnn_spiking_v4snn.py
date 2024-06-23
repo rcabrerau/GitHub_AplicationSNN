@@ -1,57 +1,74 @@
+#good
 import torch
 import torch.nn as nn
-from torch.utils.data import Dataset, DataLoader
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
+import torch.optim as optim
 import h5py
 import numpy as np
-import snntorch as snn
 import logging
 import sys
+import psutil
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
+from tqdm import tqdm
+from torch.utils.data import DataLoader, TensorDataset
+from codecarbon import EmissionsTracker
+import snntorch as snn
+from snntorch import spikegen
+
+def print_memory_usage():
+    process = psutil.Process()
+    print(f"Memory usage: {process.memory_info().rss / (1024 ** 3):.2f} GB")
 
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s - %(levelname)s - %(message)s',
                     handlers=[
-                        logging.FileHandler("log_csnn_test.txt"),
+                        logging.FileHandler("log_csnn.txt"),
                         logging.StreamHandler(sys.stdout)
                     ])
 
-torch.autograd.set_detect_anomaly(True)
+tracker = EmissionsTracker()
+file_path = "E:/MASTER UOC/AULAS_4TO_SEMESTRE/TFM/AplicationSNN/datasetConvertion_CNN_to_SNN/SPIKING_labels/spiking_data_labels_22062024_1529_test.h5"
 
-# Definir el mapeo de etiquetas
-label_map = {'center': 0, 'left': 1, 'right': 2}
 
-# Clase para cargar los datos desde el archivo HDF5
-class CustomDataset(Dataset):
-    def __init__(self, file_path):
-        self.spiking_data_list = []
-        self.labels = []
+spiking_data_list = []
+labels = []
 
-        with h5py.File(file_path, 'r') as f:
-            for group_name in f:
-                if 'spiking_data' in f[group_name]:
-                    spiking_data = f[group_name]['spiking_data'][:]
-                    self.spiking_data_list.append(spiking_data)
-                    label = label_map[f[group_name].attrs['label']]
-                    self.labels.append(label)
+label_map = {'center': 0, 'left': 1, 'right': 2}  # Define un mapeo de etiquetas a números
 
-        self.spiking_data_array = np.array(self.spiking_data_list, dtype=np.float32)
-        self.labels = np.array(self.labels)
+with h5py.File(file_path, 'r') as f:
+    for group_name in f:
+        if 'spiking_data' in f[group_name]:
+            spiking_data = f[group_name]['spiking_data'][:]
+            spiking_data_list.append(spiking_data)
+            if 'label' in f[group_name].attrs:
+                label = label_map[f[group_name].attrs['label']]  # Usa el mapeo para convertir la etiqueta a un número
+                labels.append(label)
+            else:
+                print(f"Label attribute not found in group {group_name}. Skipping this group.")
+                logging.warning(f"Label attribute not found in group {group_name}. Skipping this group.")
 
-        # Comprobar que el número de elementos en spiking_data_list es igual al número de etiquetas
-        if len(self.spiking_data_list) != len(self.labels):
-            logging.info(f"Mismatch between spiking data ({len(self.spiking_data_list)}) and labels ({len(self.labels)})")
+# Asegúrate de que haya datos y etiquetas
+if len(spiking_data_list) == 0 or len(labels) == 0:
+    raise ValueError("No se encontraron datos de picos o etiquetas en el archivo HDF5.")
 
-    def __len__(self):
-        length = len(self.labels)
-        logging.info(f"__len__ called, returning: {length}")
-        return length
+# Convertir los datos y etiquetas a tensores
+spiking_data_array = np.array(spiking_data_list, dtype=np.float32)
+spiking_data_tensor = torch.tensor(spiking_data_array)
+spiking_data_tensor_flat = spiking_data_tensor.view(-1, 3, 64, 64)
+labels_flat = np.repeat(labels, 5)
 
-    def __getitem__(self, idx):
-        logging.info(f"__getitem__ called with index: {idx}")
-        return self.spiking_data_array[idx], self.labels[idx]
+X_train, X_temp, y_train, y_temp = train_test_split(spiking_data_tensor_flat, labels_flat, test_size=0.2, random_state=42)
+X_test, X_val, y_test, y_val = train_test_split(X_temp, y_temp, test_size=0.5, random_state=42)
 
-# Definir la arquitectura del modelo
+train_dataset = TensorDataset(X_train, torch.tensor(y_train, dtype=torch.long))
+val_dataset = TensorDataset(X_val, torch.tensor(y_val, dtype=torch.long))
+test_dataset = TensorDataset(X_test, torch.tensor(y_test, dtype=torch.long))
+
+batch_size = 16
+train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
+val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False)
+test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
+
 class SpikingNet(nn.Module):
     def __init__(self, beta=0.95):
         super(SpikingNet, self).__init__()
@@ -61,110 +78,84 @@ class SpikingNet(nn.Module):
         self.leaky2 = snn.Leaky(beta=beta, init_hidden=True)
         self.pool = nn.MaxPool2d(2)
         self.flatten = nn.Flatten()
-        self.fc1 = nn.Sequential(
-            nn.Linear(64 * 14 * 14, 10),
-            nn.ReLU(inplace=False)  # Asegura que ReLU no sea inplace
-        )
-        self.fc2 = nn.Linear(10, 3)  # Output layer with 3 classes
+        
+        # Calculate the size of the flattened layer output
+        self._to_linear = None
+        self.convs(torch.randn(1, 3, 64, 64)) # Pass a dummy input to calculate the output size
+        
+        self.fc1 = nn.Linear(self._to_linear, 512)  # Adjust this value
+        self.fc2 = nn.Linear(512, 3)  # Output layer with 3 classes
+        self.dropout = nn.Dropout(0.5)  # Add dropout to avoid overfitting
 
-    def forward(self, x):
-        logging.info(f"Entrada: {x.shape}")
+    def convs(self, x):
         x = self.conv1(x)
-        logging.info(f"Despues de conv1: {x.shape}")
         x = self.leaky1(x)
-        logging.info(f"Despues de leaky1: {x.shape}")
         x = self.pool(x)
-        logging.info(f"Despues de pool1: {x.shape}")
-        x_copy = x.clone().detach() # Crear una copia del tensor de entrada
-        x = self.conv2(x_copy)  # Usar la copia en conv2        
-        logging.info(f"Despues de conv2: {x.shape}")
+        x = self.conv2(x)
         x = self.leaky2(x)
-        logging.info(f"Despues de leaky2: {x.shape}")
         x = self.pool(x)
-        logging.info(f"Despues de pool2: {x.shape}")
-        x = self.flatten(x)
-        logging.info(f"Despues de flatten: {x.shape}")
-        x = self.fc1(x)
-        logging.info(f"Despues de fc1: {x.shape}")
-        x = self.fc2(x)
-        logging.info(f"Despues de fc2: {x.shape}")
+        if self._to_linear is None:
+            self._to_linear = x.view(x.size(0), -1).shape[1]  # Save the size for Linear layer
         return x
     
-# Función para calcular las métricas
-def compute_metrics(y_true, y_pred):
-    mse = mean_squared_error(y_true, y_pred)
-    mae = mean_absolute_error(y_true, y_pred)
-    r2 = r2_score(y_true, y_pred)
-    return mse, mae, r2
+    def forward(self, x):
+        logging.info(f"Entrada: {x.shape}")
+        x = self.convs(x)
+        logging.info(f"Después de convs: {x.shape}")
+        x = self.flatten(x)
+        logging.info(f"Después de flatten: {x.shape}")
+        x = self.dropout(torch.relu(self.fc1(x)))
+        logging.info(f"Después de fc1: {x.shape}")
+        x = self.fc2(x)
+        logging.info(f"Después de fc2: {x.shape}")
+        return x
 
-# Ruta al archivo HDF5
-file_path = "E:/MASTER UOC/AULAS_4TO_SEMESTRE/TFM/AplicationSNN/datasetConvertion_CNN_to_SNN/SPIKING_labels/spiking_data_labels_22062024_1529_test.h5"
+model_csnn = SpikingNet()
 
-# Crear instancia del dataset
-dataset = CustomDataset(file_path)
-
-# Dividir el dataset en conjuntos de entrenamiento, validación y prueba
-train_set, temp_set = train_test_split(dataset, test_size=0.2, random_state=42)
-val_set, test_set = train_test_split(temp_set, test_size=0.5, random_state=42)
-
-# Crear dataloaders
-train_loader = DataLoader(train_set, batch_size=32, shuffle=True)
-val_loader = DataLoader(val_set, batch_size=32, shuffle=False)
-test_loader = DataLoader(test_set, batch_size=32, shuffle=False)
-
-# Crear instancia del modelo
-model = SpikingNet()
-
-# Definir función de pérdida y optimizador
 criterion = nn.CrossEntropyLoss()
-optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
+optimizer = optim.AdamW(model_csnn.parameters(), lr=0.0001, weight_decay=1e-4)
+scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, 'min', patience=5, factor=0.5)
 
-# Entrenamiento del modelo
 num_epochs = 1
-for epoch in range(num_epochs):
-    model.train()
-    running_loss = 0.0
-    for inputs, labels in train_loader:
-        optimizer.zero_grad()
-        logging.info(f"Train-Dimensiones originales de inputs: {inputs.shape}")
-        inputs = inputs.view(-1, 3, 64, 64)  # Reshape necesario aquí
-        logging.info(f"Train-Dimensiones después de reshape: {inputs.shape}")
-        
-        # Iterar sobre el lote original
-        for i in range(inputs.size(0)):
-            input_batch = inputs[i:i+1]
-            label_batch = labels[i:i+1]
-            label_batch = label_batch.long()
-            outputs = model(input_batch)
-            loss = criterion(outputs, label_batch)
-            loss.backward(retain_graph=True) 
+
+def predict_in_batches(model, data_loader):
+    model.eval()
+    predictions = []
+    with torch.no_grad():
+        for batch_data, _ in data_loader:
+            batch_preds = model(batch_data).squeeze().cpu().numpy()
+            predictions.extend(batch_preds)
+    return np.array(predictions)
+
+y_pred_val = predict_in_batches(model_csnn, val_loader)
+
+with tracker:
+    for epoch in range(num_epochs):
+        epoch_loss = 0.0
+        model_csnn.train()
+        for batch_X, batch_y in tqdm(train_loader, desc=f"Epoch {epoch + 1}/{num_epochs}", leave=False):
+            optimizer.zero_grad()
+            outputs = model_csnn(batch_X)
+            loss = criterion(outputs.squeeze(), batch_y)
+            loss.backward()
             optimizer.step()
-            running_loss += loss.item()
-                        
-    logging.info(f"Epoch [{epoch+1}/{num_epochs}], Loss: {running_loss/len(train_loader)}")
+            epoch_loss += loss.item()
+        avg_epoch_loss = epoch_loss / len(train_loader)
+        logging.info(f"Epoch {epoch + 1}, Loss: {avg_epoch_loss}")
+        print_memory_usage()
 
-# Evaluación del modelo en el conjunto de validación
-model.eval()
-y_true_val = []
-y_pred_val = []
-for inputs, labels in val_loader:
-    logging.info(f"Eval-Dimensiones originales de inputs: {inputs.shape}")
-    inputs = inputs.view(-1, 3, 64, 64)
-    logging.info(f"Eval-Dimensiones después de reshape: {inputs.shape}")
-    
-    batch_size = inputs.size(0) // 5  # Obtener el tamaño de lote original
-    for i in range(0, inputs.size(0), batch_size):
-        inputs_batch = inputs[i:i+batch_size]
-        labels_batch = labels[i//5:i//5+batch_size]  # Seleccionar las etiquetas correspondientes al lote actual
-        labels_batch = labels_batch.long()
-        outputs = model(inputs_batch)
-        y_true_val.extend(labels_batch.cpu().numpy())
-        y_pred_val.extend(outputs.argmax(dim=1).cpu().numpy())
+        y_pred_val = predict_in_batches(model_csnn, val_loader)
+        val_loss = mean_squared_error(y_val, y_pred_val)
+        scheduler.step(val_loss)
+        logging.info(f"Learning rate: {scheduler.get_last_lr()}")
 
-# Calcular métricas en el conjunto de validación
-mse_val, mae_val, r2_val = compute_metrics(y_true_val, y_pred_val)
+model_csnn.eval()
 
-# Imprimir las métricas en el conjunto de validación
-logging.info(f"MSE en conjunto de validación: {mse_val}")
-logging.info(f"MAE en conjunto de validación: {mae_val}")
-logging.info(f"R^2 en conjunto de validación: {r2_val}")
+mse_val = mean_squared_error(y_val, y_pred_val)
+mae_val = mean_absolute_error(y_val, y_pred_val)
+r2_val = r2_score(y_val, y_pred_val)
+
+logging.info("Métricas en el conjunto de validación (CSNN):")
+logging.info(f"MSE: {mse_val}")
+logging.info(f"MAE: {mae_val}")
+logging.info(f"R^2: {r2_val}")
