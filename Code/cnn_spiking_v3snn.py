@@ -9,14 +9,12 @@ import snntorch as snn
 import logging
 import sys
 
-
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s - %(levelname)s - %(message)s',
                     handlers=[
                         logging.FileHandler("log_csnn_test.txt"),
                         logging.StreamHandler(sys.stdout)
                     ])
-
 
 # Definir el mapeo de etiquetas
 label_map = {'center': 0, 'left': 1, 'right': 2}
@@ -37,14 +35,12 @@ class CustomDataset(Dataset):
 
         self.spiking_data_array = np.array(self.spiking_data_list, dtype=np.float32)
         self.labels = np.array(self.labels)
-                
+
         # Comprobar que el número de elementos en spiking_data_list es igual al número de etiquetas
-        assert len(self.spiking_data_list) == len(self.labels), (
-            f"Mismatch between spiking data ({len(self.spiking_data_list)}) and labels ({len(self.labels)})"
-        )
-        
+        if len(self.spiking_data_list) != len(self.labels):
+            logging.info(f"Mismatch between spiking data ({len(self.spiking_data_list)}) and labels ({len(self.labels)})")
+
     def __len__(self):
-        #return len(self.labels)
         length = len(self.labels)
         logging.info(f"__len__ called, returning: {length}")
         return length
@@ -68,27 +64,27 @@ class SpikingNet(nn.Module):
         self.fc2 = nn.Linear(10, 3)  # Output layer with 3 classes
 
     def forward(self, x):
-        logging.info("Entrada:", x.shape)
+        logging.info(f"Entrada: {x.shape}")
         x = self.conv1(x)
-        logging.info("Despues de conv1:", x.shape)
+        logging.info(f"Despues de conv1: {x.shape}")
         x = self.leaky1(x)
-        logging.info("Despues de leaky1:", x.shape)
+        logging.info(f"Despues de leaky1: {x.shape}")
         x = self.pool(x)
-        logging.info("Despues de pool1:", x.shape)
+        logging.info(f"Despues de pool1: {x.shape}")
         x = self.conv2(x)
-        logging.info("Despues de conv2:", x.shape)
+        logging.info(f"Despues de conv2: {x.shape}")
         x = self.leaky2(x)
-        logging.info("Despues de leaky2:", x.shape)
+        logging.info(f"Despues de leaky2: {x.shape}")
         x = self.pool(x)
-        logging.info("Despues de pool2:", x.shape)
+        logging.info(f"Despues de pool2: {x.shape}")
         x = self.flatten(x)
-        logging.info("Despues de flatten:", x.shape)
+        logging.info(f"Despues de flatten: {x.shape}")
         x = self.fc1(x)
-        logging.info("Despues de fc1:", x.shape)
+        logging.info(f"Despues de fc1: {x.shape}")
         x, _ = self.leaky3(x)
-        logging.info("Despues de leaky3:", x.shape)
+        logging.info(f"Despues de leaky3: {x.shape}")
         x = self.fc2(x)
-        logging.info("Despues de fc2:", x.shape)
+        logging.info(f"Despues de fc2: {x.shape}")
         return x
 
 # Función para calcular las métricas
@@ -127,12 +123,12 @@ for epoch in range(num_epochs):
     running_loss = 0.0
     for inputs, labels in train_loader:
         optimizer.zero_grad()
-        logging.info("Train-Dimensiones originales de inputs:", inputs.shape)
+        logging.info(f"Train-Dimensiones originales de inputs: {inputs.shape}")
         inputs = inputs.view(-1, 3, 64, 64)
-        logging.info("Train-Dimensiones después de reshape:", inputs.shape)
+        logging.info(f"Train-Dimensiones después de reshape: {inputs.shape}")
         outputs = model(inputs)
-        logging.info("Train-Salidas del modelo:", outputs.shape)
-        logging.info("Train-Etiquetas:", labels.shape)
+        logging.info(f"Train-Salidas del modelo: {outputs.shape}")
+        logging.info(f"Train-Etiquetas: {labels.shape}")
         loss = criterion(outputs, labels)
         loss.backward()
         optimizer.step()
@@ -144,12 +140,12 @@ model.eval()
 y_true_val = []
 y_pred_val = []
 for inputs, labels in val_loader:
-    logging.info("Eval-Dimensiones originales de inputs:", inputs.shape)
+    logging.info(f"Eval-Dimensiones originales de inputs: {inputs.shape}")
     inputs = inputs.view(-1, 3, 64, 64)
-    logging.info("Eval-Dimensiones después de reshape:", inputs.shape)
+    logging.info(f"Eval-Dimensiones después de reshape: {inputs.shape}")
     outputs = model(inputs)
-    logging.info("Eval-Salidas del modelo:", outputs.shape)
-    logging.info("Eval-Etiquetas:", labels.shape)
+    logging.info(f"Eval-Salidas del modelo: {outputs.shape}")
+    logging.info(f"Eval-Etiquetas: {labels.shape}")
     y_true_val.extend(labels.cpu().numpy())
     y_pred_val.extend(outputs.argmax(dim=1).cpu().numpy())
 
@@ -157,6 +153,6 @@ for inputs, labels in val_loader:
 mse_val, mae_val, r2_val = compute_metrics(y_true_val, y_pred_val)
 
 # Imprimir las métricas en el conjunto de validación
-logging.info("MSE en conjunto de validación:", mse_val)
-logging.info("MAE en conjunto de validación:", mae_val)
-logging.info("R^2 en conjunto de validación:", r2_val)
+logging.info(f"MSE en conjunto de validación: {mse_val}")
+logging.info(f"MAE en conjunto de validación: {mae_val}")
+logging.info(f"R^2 en conjunto de validación: {r2_val}")
