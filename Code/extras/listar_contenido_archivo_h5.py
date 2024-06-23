@@ -9,7 +9,7 @@ logging.basicConfig(level=logging.INFO,
                         logging.StreamHandler(sys.stdout)
                     ])
 
-file_path = "E:/MASTER UOC/AULAS_4TO_SEMESTRE/TFM/AplicationSNN/spiking_data_TEST.h5"
+file_path = "E:/MASTER UOC/AULAS_4TO_SEMESTRE/TFM/AplicationSNN/datasetConvertion_CNN_to_SNN/SPIKING_labels/spiking_data_labels_22062024_1529_test.h5"
 
 def print_hdf5_structure(file_path):
     with h5py.File(file_path, 'r') as f:

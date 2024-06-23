@@ -1,0 +1,22 @@
+2024-06-22 15:27:08,234 - INFO - Total images found: 6000
+2024-06-22 15:27:32,076 - INFO - Total images found: 6000
+2024-06-22 15:27:32,449 - INFO - Total images found: 6000
+2024-06-22 15:27:32,664 - INFO - Total images found: 6000
+2024-06-22 15:27:32,810 - INFO - Total images found: 6000
+2024-06-22 15:27:32,906 - INFO - Total images found: 6000
+2024-06-22 15:27:32,947 - INFO - Total images found: 6000
+2024-06-22 15:27:33,009 - INFO - Total images found: 6000
+2024-06-22 15:27:33,125 - INFO - Total images found: 6000
+2024-06-22 15:28:00,625 - INFO - Processed batch of size: 1000
+2024-06-22 15:28:00,801 - INFO - Processed batch of size: 1000
+2024-06-22 15:28:00,846 - INFO - Processed batch of size: 1000
+2024-06-22 15:28:00,960 - INFO - Processed batch of size: 1000
+2024-06-22 15:28:01,479 - INFO - Processed batch of size: 1000
+2024-06-22 15:28:01,545 - INFO - Processed batch of size: 1000
+2024-06-22 15:28:04,185 - INFO - Saved batch 1 to H5 file
+2024-06-22 15:28:04,843 - INFO - Saved batch 2 to H5 file
+2024-06-22 15:28:05,473 - INFO - Saved batch 3 to H5 file
+2024-06-22 15:28:10,491 - INFO - Saved batch 4 to H5 file
+2024-06-22 15:28:14,320 - INFO - Saved batch 5 to H5 file
+2024-06-22 15:28:16,837 - INFO - Saved batch 6 to H5 file
+2024-06-22 15:28:20,217 - INFO - Total batches processed: 6000
