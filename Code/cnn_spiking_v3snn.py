@@ -7,6 +7,7 @@ import h5py
 import numpy as np
 import snntorch as snn
 import logging
+import sys
 
 
 logging.basicConfig(level=logging.INFO,
