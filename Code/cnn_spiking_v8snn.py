@@ -109,10 +109,10 @@ class SpikingCNN(nn.Module):
 
     def forward(self, x):
         x = self.conv1(x)
-        spk1, mem1 = self.lif1(self.pool(x.clone()))  # Evitar operaciones in-place
+        spk1, mem1 = self.lif1(self.pool(x))  # Evitar operaciones in-place
         logger.info(f"spk1 shape: {spk1.shape}")
-        x = self.conv2(spk1.clone())
-        spk2, mem2 = self.lif2(self.pool(x.clone()))  # Evitar operaciones in-place
+        x = self.conv2(spk1)
+        spk2, mem2 = self.lif2(self.pool(x))  # Evitar operaciones in-place
         logger.info(f"spk2 shape: {spk2.shape}")
         spk2 = spk2.view(spk2.size(0), -1)
         logger.info(f"spk2 reshaped: {spk2.shape}")
@@ -152,7 +152,7 @@ for epoch in range(num_epochs):
         logger.info(f"Labels shape: {labels.shape}")
 
         optimizer.zero_grad()
-        outputs = model(images.clone())  # Evitar operaciones in-place
+        outputs = model(images)  # Evitar operaciones in-place
         logger.info(f"Outputs shape: {outputs.shape}")
         
         labels = labels.long()
@@ -160,7 +160,7 @@ for epoch in range(num_epochs):
         loss = criterion(outputs, labels)
         logger.info(f"Loss: {loss.item()}")
         
-        loss.backward()  # No necesitamos retain_graph aquí
+        loss.backward(retain_graph=True)   # No necesitamos retain_graph aquí
         logger.info("Backward pass done")
                 
         optimizer.step()
@@ -176,7 +176,7 @@ for epoch in range(num_epochs):
     val_loss = 0.0
     with torch.no_grad():
         for images, labels in val_loader:
-            outputs = model(images.clone())
+            outputs = model(images)  
             loss = criterion(outputs, labels.long())
             val_loss += loss.item()
     avg_val_loss = val_loss / len(val_loader)
