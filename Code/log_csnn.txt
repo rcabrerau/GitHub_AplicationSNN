@@ -3078,3 +3078,184 @@
 2024-06-23 09:44:50,324 - INFO - Shape of y_train_repeated: torch.Size([120000])
 2024-06-23 09:53:05,405 - INFO - Shape of spike_train_flat: torch.Size([120000, 3, 64, 64])
 2024-06-23 09:53:06,330 - INFO - Shape of y_train_repeated: torch.Size([120000])
+2024-06-23 10:01:46,699 - INFO - Shape of spike_train_flat: torch.Size([120000, 3, 64, 64])
+2024-06-23 10:01:47,780 - INFO - Shape of y_train_repeated: torch.Size([120000])
+2024-06-23 10:01:47,795 - INFO - Shape of spike_test_flat: torch.Size([15000, 3, 64, 64])
+2024-06-23 10:01:47,795 - INFO - Shape of y_test_repeated: torch.Size([15000])
+2024-06-23 10:01:51,979 - INFO - Data preprocessed and split: spike_train_flat=torch.Size([120000, 3, 64, 64]), spike_test_flat=torch.Size([15000, 3, 64, 64])
+2024-06-23 10:02:31,480 - INFO - Model created successfully
+2024-06-23 10:02:42,181 - INFO - Batch 1/3750
+2024-06-23 10:02:42,181 - INFO - Images shape: torch.Size([32, 3, 64, 64])
+2024-06-23 10:02:42,181 - INFO - Labels shape: torch.Size([32])
+2024-06-23 10:02:45,450 - INFO - spk1 shape: torch.Size([32, 32, 32, 32])
+2024-06-23 10:02:45,546 - INFO - spk2 shape: torch.Size([32, 64, 16, 16])
+2024-06-23 10:02:45,546 - INFO - spk2 reshaped: torch.Size([32, 16384])
+2024-06-23 10:02:45,900 - INFO - Outputs shape: torch.Size([32, 3])
+2024-06-23 10:02:46,059 - INFO - Loss: 1.1002446413040161
+2024-06-23 10:02:50,830 - INFO - Backward pass done
+2024-06-23 10:02:51,902 - INFO - Optimizer step done
+2024-06-23 10:02:51,986 - INFO - Cache cleaned
+2024-06-23 10:02:51,988 - INFO - Batch 2/3750
+2024-06-23 10:02:51,988 - INFO - Images shape: torch.Size([32, 3, 64, 64])
+2024-06-23 10:02:51,989 - INFO - Labels shape: torch.Size([32])
+2024-06-23 10:02:52,033 - INFO - spk1 shape: torch.Size([32, 32, 32, 32])
+2024-06-23 10:02:52,064 - INFO - spk2 shape: torch.Size([32, 64, 16, 16])
+2024-06-23 10:02:52,064 - INFO - spk2 reshaped: torch.Size([32, 16384])
+2024-06-23 10:02:52,064 - INFO - Outputs shape: torch.Size([32, 3])
+2024-06-23 10:02:52,064 - INFO - Loss: 1.0913752317428589
+2024-06-23 10:22:01,857 - INFO - Shape of spike_train_flat: torch.Size([120000, 3, 64, 64])
+2024-06-23 10:22:02,060 - INFO - Shape of y_train_repeated: torch.Size([120000])
+2024-06-23 10:22:02,138 - INFO - Shape of spike_test_flat: torch.Size([15000, 3, 64, 64])
+2024-06-23 10:22:02,138 - INFO - Shape of y_test_repeated: torch.Size([15000])
+2024-06-23 10:22:02,421 - INFO - Data preprocessed and split: spike_train_flat=torch.Size([120000, 3, 64, 64]), spike_test_flat=torch.Size([15000, 3, 64, 64])
+2024-06-23 10:22:21,811 - INFO - Model created successfully
+2024-06-23 10:22:32,051 - INFO - Batch 1/3750
+2024-06-23 10:22:32,051 - INFO - Images shape: torch.Size([32, 3, 64, 64])
+2024-06-23 10:22:32,051 - INFO - Labels shape: torch.Size([32])
+2024-06-23 10:22:34,193 - INFO - spk1 shape: torch.Size([32, 32, 32, 32])
+2024-06-23 10:22:34,289 - INFO - spk2 shape: torch.Size([32, 64, 16, 16])
+2024-06-23 10:22:34,289 - INFO - spk2 reshaped: torch.Size([32, 16384])
+2024-06-23 10:22:35,747 - INFO - Outputs shape: torch.Size([32, 3])
+2024-06-23 10:22:35,919 - INFO - Loss: 1.0964853763580322
+2024-06-23 10:22:38,409 - INFO - Backward pass done
+2024-06-23 10:22:39,367 - INFO - Optimizer step done
+2024-06-23 10:22:39,458 - INFO - Cache cleaned
+2024-06-23 10:22:39,461 - INFO - Batch 2/3750
+2024-06-23 10:22:39,461 - INFO - Images shape: torch.Size([32, 3, 64, 64])
+2024-06-23 10:22:39,462 - INFO - Labels shape: torch.Size([32])
+2024-06-23 10:22:39,505 - INFO - spk1 shape: torch.Size([32, 32, 32, 32])
+2024-06-23 10:22:39,535 - INFO - spk2 shape: torch.Size([32, 64, 16, 16])
+2024-06-23 10:22:39,536 - INFO - spk2 reshaped: torch.Size([32, 16384])
+2024-06-23 10:22:39,541 - INFO - Outputs shape: torch.Size([32, 3])
+2024-06-23 10:22:39,541 - INFO - Loss: 1.0999538898468018
+2024-06-23 10:22:41,821 - ERROR - RuntimeError during backward pass: Trying to backward through the graph a second time (or directly access saved tensors after they have already been freed). Saved intermediate values of the graph are freed when you call .backward() or autograd.grad(). Specify retain_graph=True if you need to backward through the graph a second time or if you need to access saved tensors after calling backward.
+2024-06-23 10:33:25,456 - INFO - Shape of spike_train_flat: torch.Size([120000, 3, 64, 64])
+2024-06-23 10:33:25,989 - INFO - Shape of y_train_repeated: torch.Size([120000])
+2024-06-23 10:33:26,004 - INFO - Shape of spike_test_flat: torch.Size([15000, 3, 64, 64])
+2024-06-23 10:33:26,020 - INFO - Shape of y_test_repeated: torch.Size([15000])
+2024-06-23 10:33:27,112 - INFO - Data preprocessed and split: spike_train_flat=torch.Size([120000, 3, 64, 64]), spike_test_flat=torch.Size([15000, 3, 64, 64])
+2024-06-23 10:33:55,425 - INFO - Model created successfully
+2024-06-23 10:34:06,569 - INFO - Batch 1/3750
+2024-06-23 10:34:06,569 - INFO - Images shape: torch.Size([32, 3, 64, 64])
+2024-06-23 10:34:06,569 - INFO - Labels shape: torch.Size([32])
+2024-06-23 10:34:08,715 - INFO - spk1 shape: torch.Size([32, 32, 32, 32])
+2024-06-23 10:34:08,826 - INFO - spk2 shape: torch.Size([32, 64, 16, 16])
+2024-06-23 10:34:08,826 - INFO - spk2 reshaped: torch.Size([32, 16384])
+2024-06-23 10:34:09,353 - INFO - Outputs shape: torch.Size([32, 3])
+2024-06-23 10:34:09,586 - INFO - Loss: 1.100945234298706
+2024-06-23 10:34:15,655 - INFO - Backward pass done
+2024-06-23 10:34:16,088 - INFO - Optimizer step done
+2024-06-23 10:34:16,147 - INFO - Cache cleaned
+2024-06-23 10:34:16,148 - INFO - Batch 2/3750
+2024-06-23 10:34:16,149 - INFO - Images shape: torch.Size([32, 3, 64, 64])
+2024-06-23 10:34:16,149 - INFO - Labels shape: torch.Size([32])
+2024-06-23 10:34:16,192 - INFO - spk1 shape: torch.Size([32, 32, 32, 32])
+2024-06-23 10:34:16,219 - INFO - spk2 shape: torch.Size([32, 64, 16, 16])
+2024-06-23 10:34:16,219 - INFO - spk2 reshaped: torch.Size([32, 16384])
+2024-06-23 10:34:16,227 - INFO - Outputs shape: torch.Size([32, 3])
+2024-06-23 10:34:16,229 - INFO - Loss: 1.0900352001190186
+2024-06-23 10:34:19,472 - ERROR - RuntimeError during backward pass: Trying to backward through the graph a second time (or directly access saved tensors after they have already been freed). Saved intermediate values of the graph are freed when you call .backward() or autograd.grad(). Specify retain_graph=True if you need to backward through the graph a second time or if you need to access saved tensors after calling backward.
+2024-06-23 10:57:31,961 - INFO - Shape of spike_train_flat: torch.Size([120000, 3, 64, 64])
+2024-06-23 10:57:32,778 - INFO - Shape of y_train_repeated: torch.Size([120000])
+2024-06-23 10:57:32,793 - INFO - Shape of spike_test_flat: torch.Size([15000, 3, 64, 64])
+2024-06-23 10:57:32,841 - INFO - Shape of y_test_repeated: torch.Size([15000])
+2024-06-23 10:57:34,328 - INFO - Data preprocessed and split: spike_train_flat=torch.Size([120000, 3, 64, 64]), spike_test_flat=torch.Size([15000, 3, 64, 64])
+2024-06-23 10:58:03,046 - INFO - Model created successfully
+2024-06-23 10:58:10,395 - INFO - Batch 1/3750
+2024-06-23 10:58:10,395 - INFO - Images shape: torch.Size([32, 3, 64, 64])
+2024-06-23 10:58:10,395 - INFO - Labels shape: torch.Size([32])
+2024-06-23 10:58:12,341 - INFO - spk1 shape: torch.Size([32, 32, 32, 32])
+2024-06-23 10:58:12,439 - INFO - spk2 shape: torch.Size([32, 64, 16, 16])
+2024-06-23 10:58:12,439 - INFO - spk2 reshaped: torch.Size([32, 16384])
+2024-06-23 10:58:13,042 - INFO - Outputs shape: torch.Size([32, 3])
+2024-06-23 10:58:13,422 - INFO - Loss: 1.096527099609375
+2024-06-23 10:58:16,450 - INFO - Backward pass done
+2024-06-23 10:58:16,743 - INFO - Optimizer step done
+2024-06-23 10:58:16,825 - INFO - Cache cleaned
+2024-06-23 10:58:16,828 - INFO - Batch 2/3750
+2024-06-23 10:58:16,828 - INFO - Images shape: torch.Size([32, 3, 64, 64])
+2024-06-23 10:58:16,829 - INFO - Labels shape: torch.Size([32])
+2024-06-23 10:58:16,872 - INFO - spk1 shape: torch.Size([32, 32, 32, 32])
+2024-06-23 10:58:16,901 - INFO - spk2 shape: torch.Size([32, 64, 16, 16])
+2024-06-23 10:58:16,902 - INFO - spk2 reshaped: torch.Size([32, 16384])
+2024-06-23 10:58:16,961 - INFO - Outputs shape: torch.Size([32, 3])
+2024-06-23 10:58:16,963 - INFO - Loss: 1.1054973602294922
+2024-06-23 10:58:18,963 - ERROR - RuntimeError during backward pass: one of the variables needed for gradient computation has been modified by an inplace operation: [torch.FloatTensor [64, 32, 3, 3]] is at version 2; expected version 1 instead. Hint: the backtrace further above shows the operation that failed to compute its gradient. The variable in question was changed in there or anywhere later. Good luck!
+2024-06-23 14:13:21,156 - INFO - Shape of spike_train_flat: torch.Size([120000, 3, 64, 64])
+2024-06-23 14:13:23,056 - INFO - Shape of y_train_repeated: torch.Size([120000])
+2024-06-23 14:13:23,056 - INFO - Shape of spike_test_flat: torch.Size([15000, 3, 64, 64])
+2024-06-23 14:13:23,057 - INFO - Shape of y_test_repeated: torch.Size([15000])
+2024-06-23 14:13:25,703 - INFO - Data preprocessed and split: spike_train_flat=torch.Size([120000, 3, 64, 64]), spike_test_flat=torch.Size([15000, 3, 64, 64])
+2024-06-23 14:14:45,649 - INFO - Model created successfully
+2024-06-23 14:14:57,058 - INFO - Batch 1/3750
+2024-06-23 14:14:57,059 - INFO - Images shape: torch.Size([32, 3, 64, 64])
+2024-06-23 14:14:57,060 - INFO - Labels shape: torch.Size([32])
+2024-06-23 14:15:00,588 - INFO - spk1 shape: torch.Size([32, 32, 32, 32])
+2024-06-23 14:15:00,785 - INFO - spk2 shape: torch.Size([32, 64, 16, 16])
+2024-06-23 14:15:00,786 - INFO - spk2 reshaped: torch.Size([32, 16384])
+2024-06-23 14:15:02,262 - INFO - Outputs shape: torch.Size([32, 3])
+2024-06-23 14:15:02,747 - INFO - Loss: 1.1004642248153687
+2024-06-23 14:15:07,155 - INFO - Backward pass done
+2024-06-23 14:15:08,147 - INFO - Optimizer step done
+2024-06-23 14:15:08,254 - INFO - Cache cleaned
+2024-06-23 14:15:08,256 - INFO - Batch 2/3750
+2024-06-23 14:15:08,283 - INFO - Images shape: torch.Size([32, 3, 64, 64])
+2024-06-23 14:15:08,283 - INFO - Labels shape: torch.Size([32])
+2024-06-23 14:15:08,327 - INFO - spk1 shape: torch.Size([32, 32, 32, 32])
+2024-06-23 14:15:08,355 - INFO - spk2 shape: torch.Size([32, 64, 16, 16])
+2024-06-23 14:15:08,356 - INFO - spk2 reshaped: torch.Size([32, 16384])
+2024-06-23 14:15:08,361 - INFO - Outputs shape: torch.Size([32, 3])
+2024-06-23 14:15:08,363 - INFO - Loss: 1.0991250276565552
+2024-06-23 14:15:11,428 - ERROR - RuntimeError during backward pass: one of the variables needed for gradient computation has been modified by an inplace operation: [torch.FloatTensor [64, 32, 3, 3]] is at version 2; expected version 1 instead. Hint: the backtrace further above shows the operation that failed to compute its gradient. The variable in question was changed in there or anywhere later. Good luck!
+2024-06-23 14:43:19,281 - INFO - Shape of spike_train_flat: torch.Size([120000, 3, 64, 64])
+2024-06-23 14:43:20,547 - INFO - Shape of y_train_repeated: torch.Size([120000])
+2024-06-23 14:43:20,562 - INFO - Shape of spike_test_flat: torch.Size([15000, 3, 64, 64])
+2024-06-23 14:43:20,578 - INFO - Shape of y_test_repeated: torch.Size([15000])
+2024-06-23 14:43:23,891 - INFO - Data preprocessed and split: spike_train_flat=torch.Size([120000, 3, 64, 64]), spike_test_flat=torch.Size([15000, 3, 64, 64])
+2024-06-23 14:44:05,830 - INFO - Model created successfully
+2024-06-23 14:44:13,886 - INFO - Batch 1/3750
+2024-06-23 14:44:13,886 - INFO - Images shape: torch.Size([32, 3, 64, 64])
+2024-06-23 14:44:13,886 - INFO - Labels shape: torch.Size([32])
+2024-06-23 14:44:15,618 - INFO - spk1 shape: torch.Size([32, 32, 32, 32])
+2024-06-23 14:44:15,696 - INFO - spk2 shape: torch.Size([32, 64, 16, 16])
+2024-06-23 14:44:15,696 - INFO - spk2 reshaped: torch.Size([32, 16384])
+2024-06-23 14:44:16,363 - INFO - Outputs shape: torch.Size([32, 3])
+2024-06-23 14:44:16,566 - INFO - Loss: 1.090393304824829
+2024-06-23 14:44:21,823 - INFO - Backward pass done
+2024-06-23 14:44:22,264 - INFO - Optimizer step done
+2024-06-23 14:44:22,304 - INFO - Cache cleaned
+2024-06-23 14:44:22,304 - INFO - Batch 2/3750
+2024-06-23 14:44:22,304 - INFO - Images shape: torch.Size([32, 3, 64, 64])
+2024-06-23 14:44:22,320 - INFO - Labels shape: torch.Size([32])
+2024-06-23 14:44:22,389 - INFO - spk1 shape: torch.Size([32, 32, 32, 32])
+2024-06-23 14:44:22,423 - INFO - spk2 shape: torch.Size([32, 64, 16, 16])
+2024-06-23 14:44:22,423 - INFO - spk2 reshaped: torch.Size([32, 16384])
+2024-06-23 14:44:22,423 - INFO - Outputs shape: torch.Size([32, 3])
+2024-06-23 14:44:22,431 - INFO - Loss: 1.0800544023513794
+2024-06-23 14:44:24,987 - ERROR - RuntimeError during backward pass: one of the variables needed for gradient computation has been modified by an inplace operation: [torch.FloatTensor [64, 32, 3, 3]] is at version 2; expected version 1 instead. Hint: the backtrace further above shows the operation that failed to compute its gradient. The variable in question was changed in there or anywhere later. Good luck!
+2024-06-23 14:50:41,485 - INFO - Shape of spike_train_flat: torch.Size([120000, 3, 64, 64])
+2024-06-23 14:50:42,469 - INFO - Shape of y_train_repeated: torch.Size([120000])
+2024-06-23 14:50:42,469 - INFO - Shape of spike_test_flat: torch.Size([15000, 3, 64, 64])
+2024-06-23 14:50:42,469 - INFO - Shape of y_test_repeated: torch.Size([15000])
+2024-06-23 14:50:44,422 - INFO - Data preprocessed and split: spike_train_flat=torch.Size([120000, 3, 64, 64]), spike_test_flat=torch.Size([15000, 3, 64, 64])
+2024-06-23 14:51:21,396 - INFO - Model created successfully
+2024-06-23 14:51:31,916 - INFO - Batch 1/3750
+2024-06-23 14:51:31,916 - INFO - Images shape: torch.Size([32, 3, 64, 64])
+2024-06-23 14:51:31,916 - INFO - Labels shape: torch.Size([32])
+2024-06-23 14:51:34,296 - INFO - spk1 shape: torch.Size([32, 32, 32, 32])
+2024-06-23 14:51:34,350 - INFO - spk2 shape: torch.Size([32, 64, 16, 16])
+2024-06-23 14:51:34,350 - INFO - spk2 reshaped: torch.Size([32, 16384])
+2024-06-23 14:51:35,998 - INFO - Outputs shape: torch.Size([32, 3])
+2024-06-23 14:51:36,697 - INFO - Loss: 1.1000627279281616
+2024-06-23 14:51:39,391 - INFO - Backward pass done
+2024-06-23 14:51:39,781 - INFO - Optimizer step done
+2024-06-23 14:51:39,851 - INFO - Cache cleaned
+2024-06-23 14:51:39,853 - INFO - Batch 2/3750
+2024-06-23 14:51:39,854 - INFO - Images shape: torch.Size([32, 3, 64, 64])
+2024-06-23 14:51:39,854 - INFO - Labels shape: torch.Size([32])
+2024-06-23 14:51:39,883 - INFO - spk1 shape: torch.Size([32, 32, 32, 32])
+2024-06-23 14:51:39,917 - INFO - spk2 shape: torch.Size([32, 64, 16, 16])
+2024-06-23 14:51:39,917 - INFO - spk2 reshaped: torch.Size([32, 16384])
+2024-06-23 14:51:39,931 - INFO - Outputs shape: torch.Size([32, 3])
+2024-06-23 14:51:39,933 - INFO - Loss: 1.0928940773010254
+2024-06-23 14:51:42,082 - ERROR - RuntimeError during backward pass: one of the variables needed for gradient computation has been modified by an inplace operation: [torch.FloatTensor [64, 32, 3, 3]] is at version 2; expected version 1 instead. Hint: the backtrace further above shows the operation that failed to compute its gradient. The variable in question was changed in there or anywhere later. Good luck!
