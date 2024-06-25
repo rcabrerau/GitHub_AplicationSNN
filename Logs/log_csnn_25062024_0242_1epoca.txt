@@ -1,0 +1,758 @@
+2024-06-25 02:31:10,740 - INFO - Epoch 0, Iteration 0 
+Train Loss: 1.10
+2024-06-25 02:31:10,759 - INFO - Accuracy: 31.25%
+
+2024-06-25 02:31:14,878 - INFO - Epoch 0, Iteration 4 
+Train Loss: 1.19
+2024-06-25 02:31:14,879 - INFO - Accuracy: 34.38%
+
+2024-06-25 02:31:18,102 - INFO - Epoch 0, Iteration 8 
+Train Loss: 1.10
+2024-06-25 02:31:18,103 - INFO - Accuracy: 34.38%
+
+2024-06-25 02:31:21,314 - INFO - Epoch 0, Iteration 12 
+Train Loss: 1.11
+2024-06-25 02:31:21,315 - INFO - Accuracy: 46.88%
+
+2024-06-25 02:31:24,459 - INFO - Epoch 0, Iteration 16 
+Train Loss: 1.10
+2024-06-25 02:31:24,459 - INFO - Accuracy: 50.00%
+
+2024-06-25 02:31:27,534 - INFO - Epoch 0, Iteration 20 
+Train Loss: 1.10
+2024-06-25 02:31:27,535 - INFO - Accuracy: 40.62%
+
+2024-06-25 02:31:30,561 - INFO - Epoch 0, Iteration 24 
+Train Loss: 1.10
+2024-06-25 02:31:30,562 - INFO - Accuracy: 31.25%
+
+2024-06-25 02:31:33,665 - INFO - Epoch 0, Iteration 28 
+Train Loss: 1.10
+2024-06-25 02:31:33,666 - INFO - Accuracy: 21.88%
+
+2024-06-25 02:31:36,885 - INFO - Epoch 0, Iteration 32 
+Train Loss: 1.10
+2024-06-25 02:31:36,886 - INFO - Accuracy: 15.62%
+
+2024-06-25 02:31:39,902 - INFO - Epoch 0, Iteration 36 
+Train Loss: 1.10
+2024-06-25 02:31:39,903 - INFO - Accuracy: 37.50%
+
+2024-06-25 02:31:42,986 - INFO - Epoch 0, Iteration 40 
+Train Loss: 1.10
+2024-06-25 02:31:42,987 - INFO - Accuracy: 31.25%
+
+2024-06-25 02:31:46,240 - INFO - Epoch 0, Iteration 44 
+Train Loss: 1.10
+2024-06-25 02:31:46,241 - INFO - Accuracy: 28.12%
+
+2024-06-25 02:31:49,814 - INFO - Epoch 0, Iteration 48 
+Train Loss: 1.10
+2024-06-25 02:31:49,815 - INFO - Accuracy: 37.50%
+
+2024-06-25 02:31:53,207 - INFO - Epoch 0, Iteration 52 
+Train Loss: 1.10
+2024-06-25 02:31:53,208 - INFO - Accuracy: 34.38%
+
+2024-06-25 02:31:56,176 - INFO - Epoch 0, Iteration 56 
+Train Loss: 1.10
+2024-06-25 02:31:56,176 - INFO - Accuracy: 31.25%
+
+2024-06-25 02:31:59,209 - INFO - Epoch 0, Iteration 60 
+Train Loss: 1.10
+2024-06-25 02:31:59,210 - INFO - Accuracy: 18.75%
+
+2024-06-25 02:32:02,337 - INFO - Epoch 0, Iteration 64 
+Train Loss: 1.10
+2024-06-25 02:32:02,338 - INFO - Accuracy: 34.38%
+
+2024-06-25 02:32:05,606 - INFO - Epoch 0, Iteration 68 
+Train Loss: 1.10
+2024-06-25 02:32:05,607 - INFO - Accuracy: 31.25%
+
+2024-06-25 02:32:08,737 - INFO - Epoch 0, Iteration 72 
+Train Loss: 1.10
+2024-06-25 02:32:08,738 - INFO - Accuracy: 25.00%
+
+2024-06-25 02:32:12,185 - INFO - Epoch 0, Iteration 76 
+Train Loss: 1.10
+2024-06-25 02:32:12,186 - INFO - Accuracy: 28.12%
+
+2024-06-25 02:32:15,736 - INFO - Epoch 0, Iteration 80 
+Train Loss: 1.10
+2024-06-25 02:32:15,737 - INFO - Accuracy: 31.25%
+
+2024-06-25 02:32:19,473 - INFO - Epoch 0, Iteration 84 
+Train Loss: 1.10
+2024-06-25 02:32:19,474 - INFO - Accuracy: 31.25%
+
+2024-06-25 02:32:22,681 - INFO - Epoch 0, Iteration 88 
+Train Loss: 1.10
+2024-06-25 02:32:22,681 - INFO - Accuracy: 25.00%
+
+2024-06-25 02:32:26,027 - INFO - Epoch 0, Iteration 92 
+Train Loss: 1.10
+2024-06-25 02:32:26,028 - INFO - Accuracy: 37.50%
+
+2024-06-25 02:32:29,196 - INFO - Epoch 0, Iteration 96 
+Train Loss: 1.10
+2024-06-25 02:32:29,196 - INFO - Accuracy: 28.12%
+
+2024-06-25 02:32:32,470 - INFO - Epoch 0, Iteration 100 
+Train Loss: 1.10
+2024-06-25 02:32:32,470 - INFO - Accuracy: 28.12%
+
+2024-06-25 02:32:35,529 - INFO - Epoch 0, Iteration 104 
+Train Loss: 1.10
+2024-06-25 02:32:35,529 - INFO - Accuracy: 21.88%
+
+2024-06-25 02:32:38,628 - INFO - Epoch 0, Iteration 108 
+Train Loss: 1.10
+2024-06-25 02:32:38,629 - INFO - Accuracy: 37.50%
+
+2024-06-25 02:32:42,324 - INFO - Epoch 0, Iteration 112 
+Train Loss: 1.10
+2024-06-25 02:32:42,324 - INFO - Accuracy: 34.38%
+
+2024-06-25 02:32:45,512 - INFO - Epoch 0, Iteration 116 
+Train Loss: 1.10
+2024-06-25 02:32:45,513 - INFO - Accuracy: 25.00%
+
+2024-06-25 02:32:49,220 - INFO - Epoch 0, Iteration 120 
+Train Loss: 1.10
+2024-06-25 02:32:49,221 - INFO - Accuracy: 31.25%
+
+2024-06-25 02:32:52,775 - INFO - Epoch 0, Iteration 124 
+Train Loss: 1.10
+2024-06-25 02:32:52,775 - INFO - Accuracy: 40.62%
+
+2024-06-25 02:32:55,693 - INFO - Epoch 0, Iteration 128 
+Train Loss: 1.10
+2024-06-25 02:32:55,694 - INFO - Accuracy: 31.25%
+
+2024-06-25 02:32:58,635 - INFO - Epoch 0, Iteration 132 
+Train Loss: 1.10
+2024-06-25 02:32:58,636 - INFO - Accuracy: 28.12%
+
+2024-06-25 02:33:02,164 - INFO - Epoch 0, Iteration 136 
+Train Loss: 1.10
+2024-06-25 02:33:02,165 - INFO - Accuracy: 21.88%
+
+2024-06-25 02:33:05,139 - INFO - Epoch 0, Iteration 140 
+Train Loss: 1.10
+2024-06-25 02:33:05,140 - INFO - Accuracy: 34.38%
+
+2024-06-25 02:33:08,319 - INFO - Epoch 0, Iteration 144 
+Train Loss: 1.10
+2024-06-25 02:33:08,319 - INFO - Accuracy: 37.50%
+
+2024-06-25 02:33:11,381 - INFO - Epoch 0, Iteration 148 
+Train Loss: 1.10
+2024-06-25 02:33:11,382 - INFO - Accuracy: 34.38%
+
+2024-06-25 02:33:14,285 - INFO - Epoch 0, Iteration 152 
+Train Loss: 1.10
+2024-06-25 02:33:14,286 - INFO - Accuracy: 37.50%
+
+2024-06-25 02:33:17,369 - INFO - Epoch 0, Iteration 156 
+Train Loss: 1.10
+2024-06-25 02:33:17,370 - INFO - Accuracy: 34.38%
+
+2024-06-25 02:33:20,613 - INFO - Epoch 0, Iteration 160 
+Train Loss: 1.10
+2024-06-25 02:33:20,613 - INFO - Accuracy: 34.38%
+
+2024-06-25 02:33:24,083 - INFO - Epoch 0, Iteration 164 
+Train Loss: 1.10
+2024-06-25 02:33:24,084 - INFO - Accuracy: 31.25%
+
+2024-06-25 02:33:27,344 - INFO - Epoch 0, Iteration 168 
+Train Loss: 1.10
+2024-06-25 02:33:27,345 - INFO - Accuracy: 31.25%
+
+2024-06-25 02:33:30,400 - INFO - Epoch 0, Iteration 172 
+Train Loss: 1.10
+2024-06-25 02:33:30,401 - INFO - Accuracy: 46.88%
+
+2024-06-25 02:33:33,399 - INFO - Epoch 0, Iteration 176 
+Train Loss: 1.10
+2024-06-25 02:33:33,400 - INFO - Accuracy: 31.25%
+
+2024-06-25 02:33:36,962 - INFO - Epoch 0, Iteration 180 
+Train Loss: 1.10
+2024-06-25 02:33:36,963 - INFO - Accuracy: 46.88%
+
+2024-06-25 02:33:40,047 - INFO - Epoch 0, Iteration 184 
+Train Loss: 1.10
+2024-06-25 02:33:40,048 - INFO - Accuracy: 40.62%
+
+2024-06-25 02:33:42,936 - INFO - Epoch 0, Iteration 188 
+Train Loss: 1.10
+2024-06-25 02:33:42,937 - INFO - Accuracy: 25.00%
+
+2024-06-25 02:33:46,237 - INFO - Epoch 0, Iteration 192 
+Train Loss: 1.10
+2024-06-25 02:33:46,238 - INFO - Accuracy: 40.62%
+
+2024-06-25 02:33:49,293 - INFO - Epoch 0, Iteration 196 
+Train Loss: 1.10
+2024-06-25 02:33:49,294 - INFO - Accuracy: 37.50%
+
+2024-06-25 02:33:52,472 - INFO - Epoch 0, Iteration 200 
+Train Loss: 1.10
+2024-06-25 02:33:52,473 - INFO - Accuracy: 21.88%
+
+2024-06-25 02:33:55,648 - INFO - Epoch 0, Iteration 204 
+Train Loss: 1.10
+2024-06-25 02:33:55,649 - INFO - Accuracy: 34.38%
+
+2024-06-25 02:33:58,739 - INFO - Epoch 0, Iteration 208 
+Train Loss: 1.10
+2024-06-25 02:33:58,739 - INFO - Accuracy: 28.12%
+
+2024-06-25 02:34:01,752 - INFO - Epoch 0, Iteration 212 
+Train Loss: 1.10
+2024-06-25 02:34:01,753 - INFO - Accuracy: 37.50%
+
+2024-06-25 02:34:04,829 - INFO - Epoch 0, Iteration 216 
+Train Loss: 1.10
+2024-06-25 02:34:04,829 - INFO - Accuracy: 31.25%
+
+2024-06-25 02:34:08,444 - INFO - Epoch 0, Iteration 220 
+Train Loss: 1.10
+2024-06-25 02:34:08,445 - INFO - Accuracy: 31.25%
+
+2024-06-25 02:34:12,299 - INFO - Epoch 0, Iteration 224 
+Train Loss: 1.10
+2024-06-25 02:34:12,300 - INFO - Accuracy: 31.25%
+
+2024-06-25 02:34:16,100 - INFO - Epoch 0, Iteration 228 
+Train Loss: 1.10
+2024-06-25 02:34:16,101 - INFO - Accuracy: 25.00%
+
+2024-06-25 02:34:19,978 - INFO - Epoch 0, Iteration 232 
+Train Loss: 1.10
+2024-06-25 02:34:19,979 - INFO - Accuracy: 31.25%
+
+2024-06-25 02:34:28,974 - INFO - Epoch 0, Iteration 236 
+Train Loss: 1.10
+2024-06-25 02:34:28,975 - INFO - Accuracy: 28.12%
+
+2024-06-25 02:34:32,545 - INFO - Epoch 0, Iteration 240 
+Train Loss: 1.10
+2024-06-25 02:34:32,546 - INFO - Accuracy: 21.88%
+
+2024-06-25 02:34:35,955 - INFO - Epoch 0, Iteration 244 
+Train Loss: 1.10
+2024-06-25 02:34:35,956 - INFO - Accuracy: 37.50%
+
+2024-06-25 02:34:38,946 - INFO - Epoch 0, Iteration 248 
+Train Loss: 1.10
+2024-06-25 02:34:38,947 - INFO - Accuracy: 21.88%
+
+2024-06-25 02:34:41,907 - INFO - Epoch 0, Iteration 252 
+Train Loss: 1.10
+2024-06-25 02:34:41,908 - INFO - Accuracy: 18.75%
+
+2024-06-25 02:34:44,995 - INFO - Epoch 0, Iteration 256 
+Train Loss: 1.10
+2024-06-25 02:34:44,995 - INFO - Accuracy: 31.25%
+
+2024-06-25 02:34:47,944 - INFO - Epoch 0, Iteration 260 
+Train Loss: 1.10
+2024-06-25 02:34:47,945 - INFO - Accuracy: 31.25%
+
+2024-06-25 02:34:51,071 - INFO - Epoch 0, Iteration 264 
+Train Loss: 1.10
+2024-06-25 02:34:51,072 - INFO - Accuracy: 40.62%
+
+2024-06-25 02:34:54,350 - INFO - Epoch 0, Iteration 268 
+Train Loss: 1.10
+2024-06-25 02:34:54,351 - INFO - Accuracy: 34.38%
+
+2024-06-25 02:34:57,479 - INFO - Epoch 0, Iteration 272 
+Train Loss: 1.10
+2024-06-25 02:34:57,480 - INFO - Accuracy: 34.38%
+
+2024-06-25 02:35:01,239 - INFO - Epoch 0, Iteration 276 
+Train Loss: 1.10
+2024-06-25 02:35:01,239 - INFO - Accuracy: 31.25%
+
+2024-06-25 02:35:05,073 - INFO - Epoch 0, Iteration 280 
+Train Loss: 1.10
+2024-06-25 02:35:05,074 - INFO - Accuracy: 50.00%
+
+2024-06-25 02:35:08,349 - INFO - Epoch 0, Iteration 284 
+Train Loss: 1.10
+2024-06-25 02:35:08,350 - INFO - Accuracy: 31.25%
+
+2024-06-25 02:35:11,371 - INFO - Epoch 0, Iteration 288 
+Train Loss: 1.10
+2024-06-25 02:35:11,372 - INFO - Accuracy: 46.88%
+
+2024-06-25 02:35:14,496 - INFO - Epoch 0, Iteration 292 
+Train Loss: 1.10
+2024-06-25 02:35:14,497 - INFO - Accuracy: 31.25%
+
+2024-06-25 02:35:17,401 - INFO - Epoch 0, Iteration 296 
+Train Loss: 1.10
+2024-06-25 02:35:17,402 - INFO - Accuracy: 31.25%
+
+2024-06-25 02:35:20,522 - INFO - Epoch 0, Iteration 300 
+Train Loss: 1.10
+2024-06-25 02:35:20,523 - INFO - Accuracy: 31.25%
+
+2024-06-25 02:35:23,605 - INFO - Epoch 0, Iteration 304 
+Train Loss: 1.10
+2024-06-25 02:35:23,606 - INFO - Accuracy: 28.12%
+
+2024-06-25 02:35:26,733 - INFO - Epoch 0, Iteration 308 
+Train Loss: 1.10
+2024-06-25 02:35:26,734 - INFO - Accuracy: 34.38%
+
+2024-06-25 02:35:29,726 - INFO - Epoch 0, Iteration 312 
+Train Loss: 1.10
+2024-06-25 02:35:29,726 - INFO - Accuracy: 25.00%
+
+2024-06-25 02:35:33,083 - INFO - Epoch 0, Iteration 316 
+Train Loss: 1.10
+2024-06-25 02:35:33,084 - INFO - Accuracy: 31.25%
+
+2024-06-25 02:35:36,795 - INFO - Epoch 0, Iteration 320 
+Train Loss: 1.10
+2024-06-25 02:35:36,796 - INFO - Accuracy: 31.25%
+
+2024-06-25 02:35:40,291 - INFO - Epoch 0, Iteration 324 
+Train Loss: 1.10
+2024-06-25 02:35:40,292 - INFO - Accuracy: 28.12%
+
+2024-06-25 02:35:43,712 - INFO - Epoch 0, Iteration 328 
+Train Loss: 1.10
+2024-06-25 02:35:43,712 - INFO - Accuracy: 25.00%
+
+2024-06-25 02:35:47,571 - INFO - Epoch 0, Iteration 332 
+Train Loss: 1.10
+2024-06-25 02:35:47,572 - INFO - Accuracy: 40.62%
+
+2024-06-25 02:35:51,294 - INFO - Epoch 0, Iteration 336 
+Train Loss: 1.10
+2024-06-25 02:35:51,295 - INFO - Accuracy: 37.50%
+
+2024-06-25 02:35:54,634 - INFO - Epoch 0, Iteration 340 
+Train Loss: 1.10
+2024-06-25 02:35:54,635 - INFO - Accuracy: 40.62%
+
+2024-06-25 02:35:58,002 - INFO - Epoch 0, Iteration 344 
+Train Loss: 1.10
+2024-06-25 02:35:58,002 - INFO - Accuracy: 25.00%
+
+2024-06-25 02:36:01,528 - INFO - Epoch 0, Iteration 348 
+Train Loss: 1.10
+2024-06-25 02:36:01,529 - INFO - Accuracy: 28.12%
+
+2024-06-25 02:36:04,776 - INFO - Epoch 0, Iteration 352 
+Train Loss: 1.10
+2024-06-25 02:36:04,777 - INFO - Accuracy: 37.50%
+
+2024-06-25 02:36:08,083 - INFO - Epoch 0, Iteration 356 
+Train Loss: 1.10
+2024-06-25 02:36:08,084 - INFO - Accuracy: 37.50%
+
+2024-06-25 02:36:11,538 - INFO - Epoch 0, Iteration 360 
+Train Loss: 1.10
+2024-06-25 02:36:11,539 - INFO - Accuracy: 50.00%
+
+2024-06-25 02:36:14,952 - INFO - Epoch 0, Iteration 364 
+Train Loss: 1.10
+2024-06-25 02:36:14,953 - INFO - Accuracy: 31.25%
+
+2024-06-25 02:36:18,449 - INFO - Epoch 0, Iteration 368 
+Train Loss: 1.10
+2024-06-25 02:36:18,450 - INFO - Accuracy: 40.62%
+
+2024-06-25 02:36:21,636 - INFO - Epoch 0, Iteration 372 
+Train Loss: 1.10
+2024-06-25 02:36:21,637 - INFO - Accuracy: 34.38%
+
+2024-06-25 02:36:25,189 - INFO - Epoch 0, Iteration 376 
+Train Loss: 1.10
+2024-06-25 02:36:25,190 - INFO - Accuracy: 31.25%
+
+2024-06-25 02:36:28,548 - INFO - Epoch 0, Iteration 380 
+Train Loss: 1.10
+2024-06-25 02:36:28,549 - INFO - Accuracy: 34.38%
+
+2024-06-25 02:36:31,866 - INFO - Epoch 0, Iteration 384 
+Train Loss: 1.10
+2024-06-25 02:36:31,867 - INFO - Accuracy: 21.88%
+
+2024-06-25 02:36:35,213 - INFO - Epoch 0, Iteration 388 
+Train Loss: 1.10
+2024-06-25 02:36:35,213 - INFO - Accuracy: 21.88%
+
+2024-06-25 02:36:38,284 - INFO - Epoch 0, Iteration 392 
+Train Loss: 1.10
+2024-06-25 02:36:38,284 - INFO - Accuracy: 28.12%
+
+2024-06-25 02:36:41,626 - INFO - Epoch 0, Iteration 396 
+Train Loss: 1.10
+2024-06-25 02:36:41,627 - INFO - Accuracy: 40.62%
+
+2024-06-25 02:36:44,683 - INFO - Epoch 0, Iteration 400 
+Train Loss: 1.10
+2024-06-25 02:36:44,684 - INFO - Accuracy: 34.38%
+
+2024-06-25 02:36:47,927 - INFO - Epoch 0, Iteration 404 
+Train Loss: 1.10
+2024-06-25 02:36:47,928 - INFO - Accuracy: 18.75%
+
+2024-06-25 02:36:50,867 - INFO - Epoch 0, Iteration 408 
+Train Loss: 1.10
+2024-06-25 02:36:50,868 - INFO - Accuracy: 53.12%
+
+2024-06-25 02:36:54,022 - INFO - Epoch 0, Iteration 412 
+Train Loss: 1.10
+2024-06-25 02:36:54,022 - INFO - Accuracy: 28.12%
+
+2024-06-25 02:36:57,249 - INFO - Epoch 0, Iteration 416 
+Train Loss: 1.10
+2024-06-25 02:36:57,250 - INFO - Accuracy: 43.75%
+
+2024-06-25 02:37:00,535 - INFO - Epoch 0, Iteration 420 
+Train Loss: 1.10
+2024-06-25 02:37:00,536 - INFO - Accuracy: 15.62%
+
+2024-06-25 02:37:03,753 - INFO - Epoch 0, Iteration 424 
+Train Loss: 1.10
+2024-06-25 02:37:03,754 - INFO - Accuracy: 40.62%
+
+2024-06-25 02:37:07,325 - INFO - Epoch 0, Iteration 428 
+Train Loss: 1.10
+2024-06-25 02:37:07,325 - INFO - Accuracy: 34.38%
+
+2024-06-25 02:37:10,420 - INFO - Epoch 0, Iteration 432 
+Train Loss: 1.10
+2024-06-25 02:37:10,421 - INFO - Accuracy: 28.12%
+
+2024-06-25 02:37:13,896 - INFO - Epoch 0, Iteration 436 
+Train Loss: 1.10
+2024-06-25 02:37:13,896 - INFO - Accuracy: 28.12%
+
+2024-06-25 02:37:16,952 - INFO - Epoch 0, Iteration 440 
+Train Loss: 1.10
+2024-06-25 02:37:16,953 - INFO - Accuracy: 34.38%
+
+2024-06-25 02:37:19,949 - INFO - Epoch 0, Iteration 444 
+Train Loss: 1.10
+2024-06-25 02:37:19,950 - INFO - Accuracy: 37.50%
+
+2024-06-25 02:37:22,966 - INFO - Epoch 0, Iteration 448 
+Train Loss: 1.10
+2024-06-25 02:37:22,966 - INFO - Accuracy: 28.12%
+
+2024-06-25 02:37:25,941 - INFO - Epoch 0, Iteration 452 
+Train Loss: 1.10
+2024-06-25 02:37:25,942 - INFO - Accuracy: 37.50%
+
+2024-06-25 02:37:29,234 - INFO - Epoch 0, Iteration 456 
+Train Loss: 1.10
+2024-06-25 02:37:29,235 - INFO - Accuracy: 31.25%
+
+2024-06-25 02:37:32,212 - INFO - Epoch 0, Iteration 460 
+Train Loss: 1.10
+2024-06-25 02:37:32,212 - INFO - Accuracy: 31.25%
+
+2024-06-25 02:37:35,233 - INFO - Epoch 0, Iteration 464 
+Train Loss: 1.10
+2024-06-25 02:37:35,234 - INFO - Accuracy: 21.88%
+
+2024-06-25 02:37:38,525 - INFO - Epoch 0, Iteration 468 
+Train Loss: 1.10
+2024-06-25 02:37:38,526 - INFO - Accuracy: 34.38%
+
+2024-06-25 02:37:41,730 - INFO - Epoch 0, Iteration 472 
+Train Loss: 1.10
+2024-06-25 02:37:41,731 - INFO - Accuracy: 18.75%
+
+2024-06-25 02:37:44,919 - INFO - Epoch 0, Iteration 476 
+Train Loss: 1.10
+2024-06-25 02:37:44,920 - INFO - Accuracy: 28.12%
+
+2024-06-25 02:37:48,390 - INFO - Epoch 0, Iteration 480 
+Train Loss: 1.10
+2024-06-25 02:37:48,391 - INFO - Accuracy: 28.12%
+
+2024-06-25 02:37:52,230 - INFO - Epoch 0, Iteration 484 
+Train Loss: 1.10
+2024-06-25 02:37:52,231 - INFO - Accuracy: 43.75%
+
+2024-06-25 02:37:55,849 - INFO - Epoch 0, Iteration 488 
+Train Loss: 1.10
+2024-06-25 02:37:55,850 - INFO - Accuracy: 46.88%
+
+2024-06-25 02:37:59,422 - INFO - Epoch 0, Iteration 492 
+Train Loss: 1.10
+2024-06-25 02:37:59,423 - INFO - Accuracy: 28.12%
+
+2024-06-25 02:38:03,158 - INFO - Epoch 0, Iteration 496 
+Train Loss: 1.10
+2024-06-25 02:38:03,159 - INFO - Accuracy: 34.38%
+
+2024-06-25 02:38:06,427 - INFO - Epoch 0, Iteration 500 
+Train Loss: 1.10
+2024-06-25 02:38:06,428 - INFO - Accuracy: 40.62%
+
+2024-06-25 02:38:09,856 - INFO - Epoch 0, Iteration 504 
+Train Loss: 1.10
+2024-06-25 02:38:09,856 - INFO - Accuracy: 34.38%
+
+2024-06-25 02:38:13,633 - INFO - Epoch 0, Iteration 508 
+Train Loss: 1.10
+2024-06-25 02:38:13,634 - INFO - Accuracy: 40.62%
+
+2024-06-25 02:38:18,594 - INFO - Epoch 0, Iteration 512 
+Train Loss: 1.10
+2024-06-25 02:38:18,595 - INFO - Accuracy: 28.12%
+
+2024-06-25 02:38:22,192 - INFO - Epoch 0, Iteration 516 
+Train Loss: 1.10
+2024-06-25 02:38:22,192 - INFO - Accuracy: 40.62%
+
+2024-06-25 02:38:25,475 - INFO - Epoch 0, Iteration 520 
+Train Loss: 1.10
+2024-06-25 02:38:25,476 - INFO - Accuracy: 31.25%
+
+2024-06-25 02:38:28,727 - INFO - Epoch 0, Iteration 524 
+Train Loss: 1.10
+2024-06-25 02:38:28,727 - INFO - Accuracy: 28.12%
+
+2024-06-25 02:38:31,911 - INFO - Epoch 0, Iteration 528 
+Train Loss: 1.10
+2024-06-25 02:38:31,912 - INFO - Accuracy: 40.62%
+
+2024-06-25 02:38:35,017 - INFO - Epoch 0, Iteration 532 
+Train Loss: 1.10
+2024-06-25 02:38:35,017 - INFO - Accuracy: 25.00%
+
+2024-06-25 02:38:38,101 - INFO - Epoch 0, Iteration 536 
+Train Loss: 1.10
+2024-06-25 02:38:38,102 - INFO - Accuracy: 46.88%
+
+2024-06-25 02:38:41,308 - INFO - Epoch 0, Iteration 540 
+Train Loss: 1.10
+2024-06-25 02:38:41,308 - INFO - Accuracy: 21.88%
+
+2024-06-25 02:38:44,372 - INFO - Epoch 0, Iteration 544 
+Train Loss: 1.10
+2024-06-25 02:38:44,373 - INFO - Accuracy: 25.00%
+
+2024-06-25 02:38:47,678 - INFO - Epoch 0, Iteration 548 
+Train Loss: 1.10
+2024-06-25 02:38:47,679 - INFO - Accuracy: 34.38%
+
+2024-06-25 02:38:51,269 - INFO - Epoch 0, Iteration 552 
+Train Loss: 1.10
+2024-06-25 02:38:51,270 - INFO - Accuracy: 37.50%
+
+2024-06-25 02:38:54,736 - INFO - Epoch 0, Iteration 556 
+Train Loss: 1.10
+2024-06-25 02:38:54,737 - INFO - Accuracy: 53.12%
+
+2024-06-25 02:38:58,002 - INFO - Epoch 0, Iteration 560 
+Train Loss: 1.10
+2024-06-25 02:38:58,003 - INFO - Accuracy: 34.38%
+
+2024-06-25 02:39:01,553 - INFO - Epoch 0, Iteration 564 
+Train Loss: 1.10
+2024-06-25 02:39:01,553 - INFO - Accuracy: 37.50%
+
+2024-06-25 02:39:05,116 - INFO - Epoch 0, Iteration 568 
+Train Loss: 1.10
+2024-06-25 02:39:05,117 - INFO - Accuracy: 25.00%
+
+2024-06-25 02:39:08,996 - INFO - Epoch 0, Iteration 572 
+Train Loss: 1.10
+2024-06-25 02:39:08,998 - INFO - Accuracy: 25.00%
+
+2024-06-25 02:39:12,677 - INFO - Epoch 0, Iteration 576 
+Train Loss: 1.10
+2024-06-25 02:39:12,677 - INFO - Accuracy: 53.12%
+
+2024-06-25 02:39:16,340 - INFO - Epoch 0, Iteration 580 
+Train Loss: 1.10
+2024-06-25 02:39:16,341 - INFO - Accuracy: 18.75%
+
+2024-06-25 02:39:20,070 - INFO - Epoch 0, Iteration 584 
+Train Loss: 1.10
+2024-06-25 02:39:20,071 - INFO - Accuracy: 40.62%
+
+2024-06-25 02:39:23,831 - INFO - Epoch 0, Iteration 588 
+Train Loss: 1.10
+2024-06-25 02:39:23,832 - INFO - Accuracy: 46.88%
+
+2024-06-25 02:39:27,791 - INFO - Epoch 0, Iteration 592 
+Train Loss: 1.10
+2024-06-25 02:39:27,792 - INFO - Accuracy: 25.00%
+
+2024-06-25 02:39:31,778 - INFO - Epoch 0, Iteration 596 
+Train Loss: 1.10
+2024-06-25 02:39:31,778 - INFO - Accuracy: 40.62%
+
+2024-06-25 02:39:35,753 - INFO - Epoch 0, Iteration 600 
+Train Loss: 1.10
+2024-06-25 02:39:35,754 - INFO - Accuracy: 43.75%
+
+2024-06-25 02:39:39,911 - INFO - Epoch 0, Iteration 604 
+Train Loss: 1.10
+2024-06-25 02:39:39,912 - INFO - Accuracy: 31.25%
+
+2024-06-25 02:39:43,686 - INFO - Epoch 0, Iteration 608 
+Train Loss: 1.10
+2024-06-25 02:39:43,687 - INFO - Accuracy: 28.12%
+
+2024-06-25 02:39:47,738 - INFO - Epoch 0, Iteration 612 
+Train Loss: 1.10
+2024-06-25 02:39:47,739 - INFO - Accuracy: 34.38%
+
+2024-06-25 02:39:51,807 - INFO - Epoch 0, Iteration 616 
+Train Loss: 1.10
+2024-06-25 02:39:51,807 - INFO - Accuracy: 12.50%
+
+2024-06-25 02:39:55,804 - INFO - Epoch 0, Iteration 620 
+Train Loss: 1.10
+2024-06-25 02:39:55,804 - INFO - Accuracy: 21.88%
+
+2024-06-25 02:40:00,053 - INFO - Epoch 0, Iteration 624 
+Train Loss: 1.10
+2024-06-25 02:40:00,054 - INFO - Accuracy: 40.62%
+
+2024-06-25 02:40:03,870 - INFO - Epoch 0, Iteration 628 
+Train Loss: 1.10
+2024-06-25 02:40:03,871 - INFO - Accuracy: 31.25%
+
+2024-06-25 02:40:07,826 - INFO - Epoch 0, Iteration 632 
+Train Loss: 1.10
+2024-06-25 02:40:07,827 - INFO - Accuracy: 34.38%
+
+2024-06-25 02:40:11,733 - INFO - Epoch 0, Iteration 636 
+Train Loss: 1.10
+2024-06-25 02:40:11,734 - INFO - Accuracy: 34.38%
+
+2024-06-25 02:40:15,675 - INFO - Epoch 0, Iteration 640 
+Train Loss: 1.10
+2024-06-25 02:40:15,675 - INFO - Accuracy: 28.12%
+
+2024-06-25 02:40:19,646 - INFO - Epoch 0, Iteration 644 
+Train Loss: 1.10
+2024-06-25 02:40:19,647 - INFO - Accuracy: 25.00%
+
+2024-06-25 02:40:23,283 - INFO - Epoch 0, Iteration 648 
+Train Loss: 1.10
+2024-06-25 02:40:23,283 - INFO - Accuracy: 37.50%
+
+2024-06-25 02:40:27,259 - INFO - Epoch 0, Iteration 652 
+Train Loss: 1.10
+2024-06-25 02:40:27,261 - INFO - Accuracy: 28.12%
+
+2024-06-25 02:40:31,137 - INFO - Epoch 0, Iteration 656 
+Train Loss: 1.10
+2024-06-25 02:40:31,138 - INFO - Accuracy: 25.00%
+
+2024-06-25 02:40:34,969 - INFO - Epoch 0, Iteration 660 
+Train Loss: 1.10
+2024-06-25 02:40:34,970 - INFO - Accuracy: 28.12%
+
+2024-06-25 02:40:38,750 - INFO - Epoch 0, Iteration 664 
+Train Loss: 1.10
+2024-06-25 02:40:38,751 - INFO - Accuracy: 40.62%
+
+2024-06-25 02:40:42,714 - INFO - Epoch 0, Iteration 668 
+Train Loss: 1.10
+2024-06-25 02:40:42,715 - INFO - Accuracy: 31.25%
+
+2024-06-25 02:40:46,827 - INFO - Epoch 0, Iteration 672 
+Train Loss: 1.10
+2024-06-25 02:40:46,828 - INFO - Accuracy: 37.50%
+
+2024-06-25 02:40:51,035 - INFO - Epoch 0, Iteration 676 
+Train Loss: 1.08
+2024-06-25 02:40:51,036 - INFO - Accuracy: 37.50%
+
+2024-06-25 02:40:55,316 - INFO - Epoch 0, Iteration 680 
+Train Loss: 1.10
+2024-06-25 02:40:55,316 - INFO - Accuracy: 28.12%
+
+2024-06-25 02:40:59,180 - INFO - Epoch 0, Iteration 684 
+Train Loss: 1.10
+2024-06-25 02:40:59,181 - INFO - Accuracy: 34.38%
+
+2024-06-25 02:41:03,152 - INFO - Epoch 0, Iteration 688 
+Train Loss: 1.10
+2024-06-25 02:41:03,153 - INFO - Accuracy: 34.38%
+
+2024-06-25 02:41:07,036 - INFO - Epoch 0, Iteration 692 
+Train Loss: 1.10
+2024-06-25 02:41:07,037 - INFO - Accuracy: 31.25%
+
+2024-06-25 02:41:10,727 - INFO - Epoch 0, Iteration 696 
+Train Loss: 1.10
+2024-06-25 02:41:10,728 - INFO - Accuracy: 37.50%
+
+2024-06-25 02:41:14,407 - INFO - Epoch 0, Iteration 700 
+Train Loss: 1.11
+2024-06-25 02:41:14,408 - INFO - Accuracy: 28.12%
+
+2024-06-25 02:41:18,154 - INFO - Epoch 0, Iteration 704 
+Train Loss: 1.10
+2024-06-25 02:41:18,155 - INFO - Accuracy: 34.38%
+
+2024-06-25 02:41:22,063 - INFO - Epoch 0, Iteration 708 
+Train Loss: 1.10
+2024-06-25 02:41:22,064 - INFO - Accuracy: 46.88%
+
+2024-06-25 02:41:26,117 - INFO - Epoch 0, Iteration 712 
+Train Loss: 1.10
+2024-06-25 02:41:26,118 - INFO - Accuracy: 21.88%
+
+2024-06-25 02:41:29,890 - INFO - Epoch 0, Iteration 716 
+Train Loss: 1.10
+2024-06-25 02:41:29,892 - INFO - Accuracy: 31.25%
+
+2024-06-25 02:41:33,726 - INFO - Epoch 0, Iteration 720 
+Train Loss: 1.10
+2024-06-25 02:41:33,727 - INFO - Accuracy: 37.50%
+
+2024-06-25 02:41:37,529 - INFO - Epoch 0, Iteration 724 
+Train Loss: 1.10
+2024-06-25 02:41:37,530 - INFO - Accuracy: 34.38%
+
+2024-06-25 02:41:41,252 - INFO - Epoch 0, Iteration 728 
+Train Loss: 1.10
+2024-06-25 02:41:41,252 - INFO - Accuracy: 37.50%
+
+2024-06-25 02:41:44,968 - INFO - Epoch 0, Iteration 732 
+Train Loss: 1.10
+2024-06-25 02:41:44,968 - INFO - Accuracy: 28.12%
+
+2024-06-25 02:41:49,443 - INFO - Epoch 0, Iteration 736 
+Train Loss: 1.10
+2024-06-25 02:41:49,444 - INFO - Accuracy: 28.12%
+
+2024-06-25 02:41:53,647 - INFO - Epoch 0, Iteration 740 
+Train Loss: 1.10
+2024-06-25 02:41:53,648 - INFO - Accuracy: 37.50%
+
+2024-06-25 02:41:57,844 - INFO - Epoch 0, Iteration 744 
+Train Loss: 1.10
+2024-06-25 02:41:57,844 - INFO - Accuracy: 34.38%
+
+2024-06-25 02:42:02,075 - INFO - Epoch 0, Iteration 748 
+Train Loss: 1.10
+2024-06-25 02:42:02,076 - INFO - Accuracy: 40.62%
+
+2024-06-25 02:42:04,186 - INFO - Elapsed time: 10 minutes, 59 seconds, 396 milliseconds
+2024-06-25 02:42:32,190 - INFO - Métricas en el conjunto de validación (CSNN):
+2024-06-25 02:42:32,191 - INFO - MSE: 0.6896666666666667
+2024-06-25 02:42:32,191 - INFO - MAE: 0.6703333333333333
+2024-06-25 02:42:32,192 - INFO - R^2: -0.0440748625393943
+2024-06-25 02:42:58,536 - INFO - The average accuracy across the testloader is: 0.32302748226950356

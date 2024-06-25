@@ -143,7 +143,7 @@ def forward_pass_with_mem(net, data):
 
 start_time = time.time()
 
-num_epochs = 1  # Puedes ajustar el número de épocas aquí
+num_epochs = 10     # Puedes ajustar el número de épocas aquí
 
 loss_hist = []
 acc_hist = []
