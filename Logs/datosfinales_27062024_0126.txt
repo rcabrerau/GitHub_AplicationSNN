@@ -1,0 +1,6 @@
+2024-06-27 00:48:09,059 - INFO - Elapsed time: 582 minutes, 2 seconds, 676 milliseconds
+2024-06-27 00:50:13,936 - INFO - Métricas en el conjunto de validación (CSNN):
+2024-06-27 00:50:13,936 - INFO - MSE: 0.6674391060301766
+2024-06-27 00:50:13,936 - INFO - MAE: 0.6674391060301766
+2024-06-27 00:50:13,937 - INFO - R^2: -7.028593609370581e-05
+2024-06-27 00:52:23,651 - INFO - The average accuracy across the testloader is: 0.33228461162975165
